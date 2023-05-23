@@ -1,4 +1,4 @@
-    <div class="container-signin">
+    <div class="container-signin" background-image="<?= BASEURL?>/assets/images/<?$data['img']?>">
         <div class="signin-text">
             <h1 class="text">Sign In</h1>
         </div>
@@ -7,7 +7,7 @@
                 <input type="text" placeholder="Email">
                 <input type="text" placeholder="Password">
                 <input type="button" class="tombol" value="Sign In">
-                <p><a href="">lupa password?</a></p>
+                <p><a href="#">lupa password?</a></p>
             </div>
             <div class="kotak">
                 <p>Belum memiliki akun? <a href="<?= BASEURL ?>/Home/SignUp">Buat disini</a></p> 

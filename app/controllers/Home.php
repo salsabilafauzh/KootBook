@@ -6,6 +6,7 @@ class Home extends Controller
     {
         $data['namePage'] = 'Sign In';
         $data['css'] = 'SignIn.css';
+        $data['img'] = 'Background-SignInSignUp.jpg';
         $this->view('templates/header',$data);
         $this->view('home/index');
         $this->view('templates/footer');
