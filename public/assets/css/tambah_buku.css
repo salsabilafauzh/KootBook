@@ -1,0 +1,104 @@
+*{overflow: hidden;}
+.contain{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #DEF5E5;
+}
+.tombol{
+    width: 80%;
+    margin: auto;
+    background-color: #8EC3B0;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 30px;
+    /* overflow: hidden; */
+}
+.kiri{
+    min-width: 200px;
+    width: 400px;
+}
+.cover{
+    border: 1px black solid;
+    height: 335px;
+    background-color: #D9D9D9;
+}
+.stok{
+    border: 1px black solid;
+    height: 63.59px;
+    background-color: #C9DBB2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.stok h1{
+    margin: 0px;
+    padding: 0px;
+    
+}
+.tambah{
+    border: 1px black solid;
+    height: 94px;
+    border-radius: 0px 0px 20px 20px;
+    background-color: #B2DBC2;
+}
+.kurang{
+    border: 1px black solid;
+    height: 94px;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #DBBCB2;
+}
+.isi{
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    height: 316px;
+    justify-content: space-between;
+    background-color: #E3F2C1;
+}
+.isi h1{
+    text-align: center;
+}
+.kanan{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.kanan table{
+    float: right;
+    border-collapse: collapse;
+}
+
+.deskripsi{
+    height: 306.84px;
+}
+#desk{
+    text-align: center;
+    height: 20%;
+    background-color: #C9DBB2;
+    font-size: 20px;
+    font-weight: bold;
+}
+#isi_desk{
+    height: 80%;
+    background-color: #E3F2C1;
+    font-size: 20px;
+}
+.detail{
+    margin: 0px;
+}
+.detail td{
+    width: 566.56px;
+    height: 55.33px;
+    padding: 5px 5px 5px 9px;
+    background-color: #E3F2C1;
+}
+#judul{
+    width: 185.44px;
+    height: 55.33px;
+    text-align: center;
+    background-color: #C9DBB2;
+}
