@@ -4,13 +4,14 @@
 }
 
 body {
-  height: 1000px;
+  /* height: 1000px; */
   background-image: url('../images/Background-SignInSignUp.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
+  margin-top: 20px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -51,6 +52,8 @@ input {
   height: 50px;
   margin: 20px 0px;
   border-radius: 7px;
+  padding: 5px;
+  font-size: medium;
 }
 
 .tombol {

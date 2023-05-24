@@ -4,6 +4,7 @@ class Home extends Controller
 {
     public function index()
     {
+
         $data['namePage'] = 'Sign In';
         $data['css'] = 'SignIn.css';
         $data['img'] = 'Background-SignInSignUp.jpg';
