@@ -5,9 +5,9 @@ class Controller{
         require_once '../app/views/'. $direct .'.php';
     }
 
-    public function model($direct){
-        require_once '../app/models/' .$direct.'.php';
+    public function model($model){
+        require_once '../app/models/' . $model .'.php';
 
-        return new $direct;
+        return new $model;
     }
 }

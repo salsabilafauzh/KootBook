@@ -2,7 +2,7 @@
 
 class Connect{
     protected $db_name = DB_NAME;
-    protected $host = HOST_NAME;
+    protected $host = DB_HOST;
     public static $dbh;
 
     public function __construct()

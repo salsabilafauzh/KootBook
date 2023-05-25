@@ -1,10 +1,13 @@
 <?php 
 
 class Database {
+   
     private $host = DB_HOST;
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $db_name = DB_NAME;
+    private $port =3307;
+
 
     private $dbh;
     private $stmt;
@@ -12,20 +15,23 @@ class Database {
     public function __construct()
     {
         // data source name
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name;
+        $dsn = 'mysql:host=' . $this->host . ';port=' . $this->port . ';dbname=' .  $this->db_name;
 
         $option = [
             PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    
         ];
 
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $option);
         } catch(PDOException $e) {
+
             die($e->getMessage());
         }
+        
     }
-
+  
     public function query($query)
     {
         $this->stmt = $this->dbh->prepare($query);
@@ -73,7 +79,5 @@ class Database {
     {
         return $this->stmt->rowCount();
     }
-
-
 
 }
