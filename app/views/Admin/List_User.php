@@ -1,8 +1,13 @@
 <div class="container-content-admin">
    <div class="table-list-user">
       <div class="search-userID">
+        
          <p>DAFTAR USER</p>
-         <form><p>SEARCH ID:</p><input type="text"></form>
+         <form><p>SEARCH ID:</p><input type="text"> 
+         <a href="" class="search-userID-icon"><i class="fas fa-search"></i></a>
+        </form>
+           
+        
       </div>
       <!-- <div class="filter-user">
          <button>PILIH SEMUA</button>
