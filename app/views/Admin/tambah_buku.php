@@ -2,13 +2,15 @@
     <div class="contain">
       <div class="container">
         <div class="kiri">
-          <div class="cover"></div>
+          <div class="cover">
+            <input type="file" name="" id="">
+          </div>
           <div class="stok">
-            <h1>STOK</h1>
+            <h2>STOK</h2>
           </div>
           <div class="isi">
             <button class="tambah"><h1>+</h1></button>
-            <h1>XXXX</h1>
+            <h3>XXXX</h3>
             <button class="kurang"><h1>-</h1></button>
           </div>
         </div>
@@ -16,27 +18,27 @@
           <table border="1" class="detail">
             <tr>
               <td id="judul">JUDUL</td>
-              <td>APAKEK</td>
+              <td><input type="text"></td>
             </tr>
             <tr>
               <td id="judul">PENULIS</td>
-              <td>APAKEK</td>
+              <td><input type="text"></td>
             </tr>
             <tr>
               <td id="judul">TAHUN TERBIT</td>
-              <td>APAKEK</td>
+              <td><input type="text"></td>
             </tr>
             <tr>
               <td id="judul">HALAMAN</td>
-              <td>7jt</td>
+              <td><input type="text"></td>
             </tr>
             <tr>
               <td id="judul">EDISI</td>
-              <td>xxxx</td>
+              <td><input type="text"></td>
             </tr>
             <tr>
               <td id="judul">BAHASA</td>
-              <td>xxxx</td>
+              <td><input type="text"></td>
             </tr>
           </table>
           <table border="1" class="deskripsi" cellpadding="20">
