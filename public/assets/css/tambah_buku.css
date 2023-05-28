@@ -7,6 +7,7 @@
 }
 .tombol{
     width: 80%;
+    height: 85px;
     margin: auto;
     background-color: #8EC3B0;
 }
@@ -23,8 +24,15 @@
 }
 .cover{
     border: 1px black solid;
-    height: 335px;
-    background-color: #D9D9D9;
+    background-color: #C9DBB2;
+    display: flex;
+    height: 63.59px;
+    margin-bottom: 30px;    
+}
+
+.cover input{
+    justify-content: center;
+    align-items: center;
 }
 .stok{
     border: 1px black solid;
@@ -59,7 +67,7 @@
     justify-content: space-between;
     background-color: #E3F2C1;
 }
-.isi h1{
+.isi h3{
     text-align: center;
 }
 .kanan{
@@ -71,7 +79,11 @@
     float: right;
     border-collapse: collapse;
 }
-
+.kanan table tr td input{
+    border: none;
+    width: 99%;
+    background-color: #E3F2C1 ;
+}
 .deskripsi{
     height: 306.84px;
 }
