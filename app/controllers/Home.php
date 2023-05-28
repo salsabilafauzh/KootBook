@@ -47,6 +47,14 @@ class Home extends Controller
         }
     }
 
+    public function HomePage(){
+        $data['namePage'] = 'Home Page';
+        $data['css'] = 'HomePage.css';
+        $this->view('templates/header',$data);
+        $this->view('User/HomePage');
+        $this->view('templates/footer');
+    }
+
     // public function auth(){
     //     if($data = $this->model('user_model')->getUser($_POST)){
     //         if(password_verify($_POST['Password'], $data['Password'])){
