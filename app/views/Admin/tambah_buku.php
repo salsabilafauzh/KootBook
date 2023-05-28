@@ -6,7 +6,6 @@
           <div class="stok">
             <h1>STOK</h1>
           </div>
-
           <div class="isi">
             <button class="tambah"><h1>+</h1></button>
             <h1>XXXX</h1>
@@ -77,6 +76,6 @@
           </table>
         </div>
       </div>
-      <button class="tombol"><h1>TAMBAH BUKU</h1></button>
+      <button class="tombol">TAMBAH BUKU</button>
     </div>
 
