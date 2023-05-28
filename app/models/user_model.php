@@ -7,10 +7,22 @@ class user_model extends Controller{
     {
         $this->db = new Database();
     }
+    public function getAllUser() {
+        $Role = "Admin";
+        $this->db->query("SELECT * FROM user WHERE Role != '{$Role}' ");
+        return $this->db->resultSet();
+    }
     
     public function getUser($data){
         $this->db->query('SELECT * FROM user WHERE Email = :Email');
         $this->db->bind('Email', $data['Email']);
+        return $this->db->single();
+    }
+    public function getUserRole($data)
+    {
+        $query = "SELECT Role FROM user WHERE Email = :Email";
+        $this->db->query($query);
+        $this->db->bind('Role', $data['Role']);
         return $this->db->single();
     }
 
@@ -35,4 +47,5 @@ class user_model extends Controller{
              }
         }
     }
+
 }

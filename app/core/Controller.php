@@ -10,4 +10,9 @@ class Controller{
 
         return new $model;
     }
+    // public function controller($controller){
+    //     require_once '../app/controllers/' . $controller .'.php';
+
+    //     return new $controller;
+    // }
 }

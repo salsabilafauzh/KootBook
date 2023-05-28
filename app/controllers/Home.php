@@ -29,11 +29,14 @@ class Home extends Controller
 
     public function SignIn(){
         if($this->model('user_model')->getUser($_POST) > 0){
-            header('Location: '. BASEURL .'/Admin/test');
+            header('Location: '. BASEURL .'/Admin/');
         }else{
             $this->index();
         }
+        // $this->auth();
+
     }
+
 
     public function signUpSession(){
         if($this->model('user_model')->insertUser($_POST) > 0){
@@ -46,15 +49,21 @@ class Home extends Controller
 
     // public function auth(){
     //     if($data = $this->model('user_model')->getUser($_POST)){
-    //         if(password_verify($_POST['password'], $data['password'])){
+    //         if(password_verify($_POST['Password'], $data['Password'])){
     //             session_start();
-    //             $_SESSION['user'] = $data;
-    //             header('Location: '.BASEURL.'/summary');
-    //             exit;
+    //             if($this->model('user_model')->getUserRole($_POST['Email']) == 'Admin'){
+    //                 $_SESSION['user'] = $data;
+    //                             header('Location: '.BASEURL.'/Admin/');
+    //                             exit;
+    //             }else{
+    //                 $_SESSION['user'] = $data;
+    //                 header('Location: '.BASEURL.'/Home/');
+    //                             exit;
+    //             }
     //         }
     //     }
     //     $_SESSION['invalid-login'] = true;
-    //     header('Location: '.BASEURL.'/home/login');
+    //     header('Location: '.BASEURL.'/');
     //     exit;
     // }
 

@@ -62,7 +62,11 @@ input {
   color: #ffffff;
   font-weight: bold;
 }
-
+input .tombol:hover {
+  background-color: #1e1f26;
+  border-width: 0px;
+  cursor: pointer;
+}
 a {
   color: rgb(0, 8, 255);
   text-decoration: none;
