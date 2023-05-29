@@ -62,6 +62,12 @@ input {
   color: #ffffff;
   font-weight: bold;
 }
+
+.tombol:hover {
+  background-color: #1e1f26;
+  border-width: 0px;
+}
+
 input .tombol:hover {
   background-color: #1e1f26;
   border-width: 0px;
