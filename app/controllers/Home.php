@@ -28,16 +28,15 @@ class Home extends Controller
     }
 
     public function SignIn(){
-        if($this->model('user_model')->getUser($_POST) > 0){
+        $data = $this->model('user_model')->getUser($_POST);
+        $role = $data['Role'];
+        if($this->model('user_model')->getUser($_POST) > 0 && $role == "Admin" ){
             header('Location: '. BASEURL .'/Admin/');
         }else{
-            $this->index();
+            $this->HomePage();
         }
-        // $this->auth();
 
     }
-
-
     public function signUpSession(){
         if($this->model('user_model')->insertUser($_POST) > 0){
             $this->index();
@@ -45,6 +44,14 @@ class Home extends Controller
         }else{
             $this->SignUp();
         }
+    }
+
+    public function HomePage(){
+        $data['namePage'] = 'Home Page';
+        $data['css'] = 'HomePage.css';
+        $this->view('templates/header',$data);
+        $this->view('User/HomePage');
+        $this->view('templates/footer');
     }
 
     // public function auth(){

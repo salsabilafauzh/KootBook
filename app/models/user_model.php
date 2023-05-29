@@ -18,13 +18,13 @@ class user_model extends Controller{
         $this->db->bind('Email', $data['Email']);
         return $this->db->single();
     }
-    public function getUserRole($data)
-    {
-        $query = "SELECT Role FROM user WHERE Email = :Email";
-        $this->db->query($query);
-        $this->db->bind('Role', $data['Role']);
-        return $this->db->single();
-    }
+    // public function getUserRole($data)
+    // {
+    //     $query = `SELECT Role FROM user WHERE Email = :{$data}`;
+    //     $this->db->query($query);
+    //     $this->db->bind('Role', $data['Role']);
+    //     return $this->db->single();
+    // }
 
     public function insertUser($data){
         
