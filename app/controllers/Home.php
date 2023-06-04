@@ -54,6 +54,14 @@ class Home extends Controller
         $this->view('templates/footer');
     }
 
+    public function DetailBuku(){
+        $data['namePage'] = 'Detail Buku';
+        $data['css'] = 'Detail-buku.css';
+        $this->view('templates/header',$data);
+        $this->view('User/detailBuku');
+        $this->view('templates/footer');
+    }
+
     // public function auth(){
     //     if($data = $this->model('user_model')->getUser($_POST)){
     //         if(password_verify($_POST['Password'], $data['Password'])){
