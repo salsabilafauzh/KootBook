@@ -25,14 +25,17 @@
         </header>
     </div>
     <div class="search-box">
-        <input type="text" placeholder="Mau cari apa?">
+        
         <div class="search-icon">
             <i class="fas fa-search"></i>
         </div>
         <div class="cancel-icon">
             <i class="fas fa-times"></i>
         </div>
+        <input type="text" placeholder="Mau cari buku apa?">
     </div>
+
+    <br><br>
     <!-- <section= class="search-data"></section> -->
     <div class="warta-pustaka">
         <div class="warta-header">

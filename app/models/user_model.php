@@ -34,6 +34,7 @@ class user_model extends Controller{
         }else{
             if($this-> getUser($data) > 0){
                 //BUTUH ALERT EMAIL SUDAH TERDAFTAR
+                echo '<script>alert("Email sudah pernah digunakan");</script>';
              }else{
                  $this->db->query("INSERT INTO user VALUES ('', :Username, :Email, :Password, :Role)");
      

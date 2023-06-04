@@ -10,7 +10,7 @@ class Admin extends Controller
         $this->view('templates/header',$data);
         $this->view('Admin/templates/header',$data);
         $this->view('Admin/templates/sidebar');
-        $this->view('Admin/index');
+        $this->view('Admin/homePage');
         $this->view('templates/footer');
     }
     public function listUser()
