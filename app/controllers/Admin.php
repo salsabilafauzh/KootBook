@@ -53,4 +53,11 @@ class Admin extends Controller
         $this->view('Admin/update_buku');
         $this->view('templates/footer');
     }
+    public function homePage(){
+        $data['namePage'] = 'Home Page';
+        $data['css'] = 'Admin-homePage.css';
+        $this->view('templates/header',$data);
+        $this->view('Admin/home_page');
+        $this->view('templates/footer');
+    }
 }
