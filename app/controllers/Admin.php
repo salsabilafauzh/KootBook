@@ -10,7 +10,7 @@ class Admin extends Controller
         $this->view('templates/header',$data);
         $this->view('Admin/templates/header',$data);
         $this->view('Admin/templates/sidebar');
-        $this->view('Admin/index');
+        $this->view('Admin/homePage');
         $this->view('templates/footer');
     }
     public function listUser()
@@ -58,6 +58,13 @@ class Admin extends Controller
         $data['css'] = 'Admin-homePage.css';
         $this->view('templates/header',$data);
         $this->view('Admin/home_page');
+        $this->view('templates/footer');
+    }
+    public function pinjamBuku(){
+        $data['namePage'] = 'Pinjam Buku';
+        $data['css'] = 'Admin-pinjamBuku.css';
+        $this->view('templates/header',$data);
+        $this->view('Admin/pinjam_buku');
         $this->view('templates/footer');
     }
 }
