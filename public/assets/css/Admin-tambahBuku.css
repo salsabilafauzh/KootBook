@@ -1,0 +1,152 @@
+* {
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background: #bcead5;
+  position: fixed;
+}
+
+.container-content-admin {
+  padding-left: 240px;
+  padding-top: 140px;
+  border: black;
+  padding-right: 40px;
+}
+
+.tombol {
+  width: 50%;
+  height: 50px;
+  align-items: center;
+  background-color: #8ec3b0;
+  margin-left: 25%;
+}
+
+.tombol:hover {
+  background-color: #73a392;
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  /* overflow: hidden; */
+}
+.kiri {
+  min-width: 200px;
+  width: 250px;
+}
+.cover {
+  border: 1px black solid;
+  background-color: #c9dbb2;
+  display: flex;
+  height: 250px;
+  margin-bottom: 30px;
+}
+
+.cover input {
+  justify-content: center;
+  align-items: center;
+}
+.stok {
+  border: 1px black solid;
+  height: 40px;
+  background-color: #c9dbb2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stok h1 {
+  margin: 0px;
+  padding: 0px;
+}
+.tambah {
+  border: 1px black solid;
+  height: 50px;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #b2dbc2;
+  font-size: 40px;
+}
+
+.tambah:hover {
+  background-color: #9abba6;
+  cursor: pointer;
+}
+.kurang {
+  border: 1px black solid;
+  height: 50px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #dbbcb2;
+  font-size: 40px;
+}
+.kurang:hover {
+  background-color: #b2978e;
+  cursor: pointer;
+}
+.isi {
+  border: 1px black solid;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
+  background-color: #e3f2c1;
+}
+.isi h3 {
+  text-align: center;
+}
+.kanan {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+table {
+  width: 100%;
+}
+.kanan form table {
+  border-collapse: collapse;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.kanan form table td {
+  padding: 10px;
+}
+.kanan table tr td input {
+  border: none;
+  background-color: #ffffff;
+  width: 98%;
+  padding: 5px;
+}
+#desk {
+  text-align: center;
+  height: 20%;
+  background-color: #c9dbb2;
+  font-size: 20px;
+  font-weight: bold;
+}
+#isi_desk {
+  height: 80%;
+  background-color: #e3f2c1;
+}
+#isi_desk_input {
+  background-color: #ffffff;
+  resize: none;
+  width: 95%;
+  padding: 10px;
+}
+.detail {
+  margin: 0px;
+}
+.detail td {
+  background-color: #e3f2c1;
+}
+#judul {
+  padding: 10px;
+  width: 20%;
+  background-color: #c9dbb2;
+}

@@ -23,3 +23,65 @@
         </div>
     </ul>
 </div>
+
+<style>
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  background: #8ec3b0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 50px 50px 0px;
+  left: 0px;
+}
+.sidebar h1 {
+  padding-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.sidebar a {
+  text-decoration: none;
+}
+.sidebar a h2 {
+  margin: 0px;
+  text-align: center;
+  color: #6b728e;
+}
+.sidebar a h2:hover {
+  color: #575a66;
+}
+
+.sidebar .profile-admin {
+  padding: 10px;
+  text-align: center;
+}
+
+.option-sidebar-admin {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.option-sidebar-admin ul {
+  margin-top: 10px;
+  padding: 0px;
+}
+
+.option-sidebar-admin li a button {
+  width: 100%;
+  height: 70px;
+  margin-top: 10px;
+  background-color: black;
+  font-size: larger;
+  color: white;
+  font-weight: bold;
+}
+
+.option-sidebar-admin li a button:hover {
+  background-color: rgb(65, 65, 65);
+  border-width: 0px;
+  cursor: pointer;
+}
+</style>

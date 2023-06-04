@@ -1,7 +1,11 @@
 <div class="container-content-admin">
     <div class="contain">
       <div class="container">
-        <div class="kiri">
+      <div class="ID-BUKU">
+        <p>ID:</p>
+        <p>1234</p>
+      </div>
+      <div class="kiri">
           <div class="cover">
             <input type="file" name="" id="">
           </div>
@@ -61,6 +65,5 @@
           </form>
         </div>
       </div>
-   
     </div>
     </div>

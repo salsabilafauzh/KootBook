@@ -35,7 +35,6 @@ class Home extends Controller
         }else{
             $this->HomePage();
         }
-
     }
     public function signUpSession(){
         if($this->model('user_model')->insertUser($_POST) > 0){

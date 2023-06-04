@@ -1,23 +1,39 @@
 * {
   overflow: hidden;
 }
-.contain {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #def5e5;
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background: #bcead5;
+  position: fixed;
 }
+
+.container-content-admin {
+  padding-left: 240px;
+  padding-top: 140px;
+  border: black;
+  padding-right: 40px;
+}
+
 .tombol {
-  width: 80%;
-  height: 85px;
-  margin: auto;
+  width: 50%;
+  height: 50px;
+  align-items: center;
   background-color: #8ec3b0;
+  margin-left: 25%;
+}
+
+.tombol:hover {
+  background-color: #73a392;
+  cursor: pointer;
 }
 .container {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  padding: 30px;
   /* overflow: hidden; */
 }
 .kiri {
@@ -28,7 +44,7 @@
   border: 1px black solid;
   background-color: #c9dbb2;
   display: flex;
-  height: 63.59px;
+  height: 250px;
   margin-bottom: 30px;
 }
 
@@ -38,7 +54,7 @@
 }
 .stok {
   border: 1px black solid;
-  height: 63.59px;
+  height: 40px;
   background-color: #c9dbb2;
   display: flex;
   justify-content: center;
@@ -50,21 +66,32 @@
 }
 .tambah {
   border: 1px black solid;
-  height: 94px;
+  height: 50px;
   border-radius: 0px 0px 20px 20px;
   background-color: #b2dbc2;
+  font-size: 40px;
+}
+
+.tambah:hover {
+  background-color: #9abba6;
+  cursor: pointer;
 }
 .kurang {
   border: 1px black solid;
-  height: 94px;
+  height: 50px;
   border-radius: 20px 20px 0px 0px;
   background-color: #dbbcb2;
+  font-size: 40px;
+}
+.kurang:hover {
+  background-color: #b2978e;
+  cursor: pointer;
 }
 .isi {
   border: 1px black solid;
   display: flex;
   flex-direction: column;
-  height: 316px;
+  height: 200px;
   justify-content: space-between;
   background-color: #e3f2c1;
 }
@@ -75,18 +102,25 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
-.kanan table {
-  float: right;
+table {
+  width: 100%;
+}
+.kanan form table {
   border-collapse: collapse;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.kanan form table td {
+  padding: 10px;
 }
 .kanan table tr td input {
   border: none;
-  width: 99%;
-  background-color: #e3f2c1;
-}
-.deskripsi {
-  height: 306.84px;
+  background-color: #ffffff;
+  width: 98%;
+  padding: 5px;
 }
 #desk {
   text-align: center;
@@ -98,20 +132,30 @@
 #isi_desk {
   height: 80%;
   background-color: #e3f2c1;
-  font-size: 20px;
+}
+#isi_desk_input {
+  background-color: #ffffff;
+  resize: none;
+  width: 95%;
+  padding: 10px;
 }
 .detail {
   margin: 0px;
 }
 .detail td {
-  width: 566.56px;
-  height: 55.33px;
-  padding: 5px 5px 5px 9px;
   background-color: #e3f2c1;
 }
 #judul {
-  width: 185.44px;
-  height: 55.33px;
-  text-align: center;
+  padding: 10px;
+  width: 20%;
   background-color: #c9dbb2;
+}
+
+.ID-BUKU {
+  border-radius: 50%;
+  width: 150px;
+  height: 100px;
+  background-color: #e3f2c1;
+  align-items: center;
+  text-align: center;
 }
