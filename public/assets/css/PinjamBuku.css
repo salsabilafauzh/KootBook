@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #E4E8E4;
+    margin: 0;
+    padding: 0;
+}
+
+.Container1{
+    display: flex;
+}
+
+.Container1_a{
+    display: block;
+}
+
+.mainbar {
+    width: 99.3%;
+    height: 100px;
+    background-color: #8EC3B0;
+    border: 4px solid black;
+    border-radius: 0 0 50px 50px;
+}
+
+.mainbar p{
+    color: #2D2F3F;
+    font-size: 48px;
+    font-weight: bold;
+    padding-left: 30px;
+    margin-top: 19px;
+}
+
+.mainbar img{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 90px;
+}
+
+.Cover_Buku{
+    background-color: gray;
+    width: 180px;
+    height: 210px;
+    margin-top: 10px;
+    margin-left: 120px;
+}
+
+.Detail_Buku1{
+    background-color: #AAC8A7;
+    border: 4px solid black;
+    width: 319px;
+    height: 290px;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DB1_Isi{
+    margin-top: 6px;
+    background-color: #BCEAD5;
+    width: 279px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DB1_Isi p{
+    color: #2D2F3F;
+    font-size: 24px;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: Bold;
+}
+
+.Pinjam_Buku{
+    margin-top: 10px;
+    margin-left: 4%;
+    background-color: #BCEAD5;
+    border: 4px solid black;
+    width: 900px;
+    height: 525px;
+    border-radius: 20px;
+}
+
+.Pinjam_Buku p{
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #2D2F3F;
+}
+
+.Pinjam_Buku table{
+    background-color: #AAC8A7;
+    margin: 0 auto;
+    height: 10%;
+    width: 90%;
+    border: 3px solid black;
+    border-radius: 20px 20px 0 0;
+}
+
+
+.Pinjam_Buku textarea {
+    height: 200px;
+    width: 98%;
+    resize: none;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    vertical-align: top;
+    border: 2px solid black;
+}
+
+.Select_Hari{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Select_Hari input{
+    background-color: #404258;
+    color: white;
+    border-radius: 10px;
+    height: 40px;
+    width: 60px;
+}
+
+.Submit {
+    display: flex;
+    margin-top: 10px;
+}
+  
+
+.Submit_Button2 input{
+    background-color: #D03030;
+    color: white;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.Submit_Button1 input{
+    background-color: #2D2F3F;
+    color: white;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 528%;
+}
+
+.Tggl{
+    margin-top: 10px;
+}
+
+.Tggl table{
+    width: 60%;
+    font-weight: bold;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border-radius: 0px;
+}

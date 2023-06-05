@@ -61,6 +61,14 @@ class Home extends Controller
         $this->view('templates/footer');
     }
 
+    public function PinjamBuku(){
+        $data['namePage'] = 'Pinjam Buku';
+        $data['css'] = 'PinjamBuku.css';
+        $this->view('templates/header', $data);
+        $this->view('User/PinjamBuku');
+        $this->view('templates/footer');
+    }
+
     // public function auth(){
     //     if($data = $this->model('user_model')->getUser($_POST)){
     //         if(password_verify($_POST['Password'], $data['Password'])){
