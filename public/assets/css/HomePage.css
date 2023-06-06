@@ -212,7 +212,7 @@ header {
   transform: translateY(-50%) rotate(360deg);
 }
 
-/* section .search-box .search-data{
+.search-box .search-data{
     padding-top: 40px;
     text-align: center;
     display: flex;
@@ -222,12 +222,12 @@ header {
     color: black;
     font-size: 18px;
     word-wrap: break-word;
-} */
-section .search-data.active {
+}
+.search-data.active {
   display: none;
 }
 
-section .search-data {
+.search-data {
   display: flex;
   width: 100%;
   text-align: center;
@@ -239,6 +239,7 @@ section .search-data {
   font-size: 18px;
   word-wrap: break-word;
 }
+
 
 /* side way scrolling */
 .rekomendasi {
@@ -311,6 +312,23 @@ section .search-data {
   top: 50%;
 }
 /* ------------------------- */
+
+/* Footer */
+footer{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to right, #8EC3B0, #43b490);
+    opacity: 80%;
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+/* ------ */
+
 
 @media (max-width: 992px) {
   .navbar .links,
