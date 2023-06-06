@@ -19,19 +19,18 @@
       <th>EMAIL</th>
       <th>AKSI</th>
       </tr>
-         <?php
-
+            <?php
                 $totalRows = count($data['user']);
                 $limit = 6; 
                 if (isset($data['page'])) {
-                    $currentPage = $data;
+                    $currentPage = $data['page'];
                 }else{
                     $currentPage = 1;
                 }
 
                 $totalPages = ceil($totalRows / $limit); 
                 $startIndex = ($currentPage - 1) * $limit;
-                $endIndex = $startIndex + $limit - 1; 
+                $endIndex = $startIndex + $limit -1; 
     
                 for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
                     $user = $data['user'][$i];
@@ -45,8 +44,6 @@
                     echo "</td>";
                     echo "</tr>";
                 }
-                
-           
             ?>
                 </table>
             <?php

@@ -19,9 +19,9 @@ body {
   padding: 0px;
 }
 
-h1,
-h2 {
+h1, h2 {
   margin: 25px 20px 0px;
+  text-align: center;
 }
 
 .overview {
@@ -50,13 +50,17 @@ h2 {
   font-weight: bold;
 }
 
-.menu {
+/* .menu {
   display: flex;
   background-color: #75c8b0;
   width: 997px;
   height: 360px;
   flex-direction: column;
   gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  border-radius: 20px;
 }
 
 .menuBox {
@@ -75,7 +79,7 @@ h2 {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-}
+} */
 
 .kotak img {
   width: 120px;
