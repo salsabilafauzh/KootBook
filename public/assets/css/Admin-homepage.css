@@ -13,3 +13,78 @@ body {
   border: black;
   padding-right: 40px;
 }
+<<<<<<< HEAD
+=======
+
+*{
+margin: 0px;
+padding: 0px;
+}
+
+h1, h2 {
+  margin: 25px 20px 0px;
+  text-align: center;
+}
+
+.overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.kotak {
+  border-radius: 20px;
+  display: flex;
+  gap: 30px;
+  width: 320px;
+  height: 320px;
+  background-color: #75c8b0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.kotak p,
+.kotakMenu p {
+  font-size: large;
+  font-weight: bold;
+}
+
+/* .menu {
+  display: flex;
+  background-color: #75c8b0;
+  width: 997px;
+  height: 360px;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  border-radius: 20px;
+}
+
+.menuBox {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.kotakMenu {
+  width: 277px;
+  height: 228px;
+  background-color: #def5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+} */
+
+.kotak img {
+  width: 120px;
+  height: 120px;
+}
+>>>>>>> 64e7c00418e616848b6d681772a52fb48cc38d39

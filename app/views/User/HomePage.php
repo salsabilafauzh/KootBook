@@ -2,7 +2,7 @@
         <header>
             <div class="navbar">
                 <div class="logo">
-                    <a href="#">Koot Book</a>
+                    <a href="#"><img src="../../public/assets/images/Logo.png" alt=""></a>
                 </div>
                 <ul class="links">
                     <li><a href="hemo">Home</a></li>
@@ -36,7 +36,7 @@
     </div>
 
     <br><br>
-    <!-- <section= class="search-data"></section> -->
+    <div class="search-data"></div>
     <div class="warta-pustaka">
         <div class="warta-header">
 
@@ -61,6 +61,9 @@
         </div>
     </div>
 
+    <footer>
+    </footer>
+
     <script type="text/javascript">
         const toggleBtn = document.querySelector('.toggle_btn')
         const toggleBtnIcon = document.querySelector('.toggle_btn i')
@@ -82,6 +85,12 @@
             searchInput.classList.add("active");
             cancelBtn.classList.add("active");
             searchInput.focus();
+            if(searchInput.value != ""){
+            var values = searchInput.value;
+            searchData.classList.remove("active");
+            }else{
+            searchData.textContent = "";
+            }
 
         }
         cancelBtn.onclick = () => {
@@ -128,17 +137,3 @@
         });
 
     </script>
-    <!-- Fitur Section -->
-    <!-- <section id="rekomendasi">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="card-rekomendasi">
-            <img src="Background-SignInSignUp.jpg" alt="">
-
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-    </section>
