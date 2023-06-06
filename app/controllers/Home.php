@@ -65,5 +65,4 @@ class Home extends Controller
         $this->view('User/detailBuku');
         $this->view('templates/footer');
     }
-
 }
