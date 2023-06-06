@@ -10,7 +10,7 @@
                     <li><a href="services">Services</a></li>
                     <li><a href="contact">Contact</a></li>
                 </ul>
-                <a href="#" class="action_btn">Book Mark</a>
+                <a href="#" class="action_btn">Logout</a>
                 <div class="toggle_btn">
                     <i class="fa-solid fa-bars"></i>
                 </div>
@@ -20,7 +20,7 @@
                 <li><a href="about">About</a></li>
                 <li><a href="services">Services</a></li>
                 <li><a href="contact">Contact</a></li>
-                <li><a href="#" class="action_btn">Book Mark</a></li>
+                <li><a href="#" class="action_btn">LogOut</a></li>
             </div>
         </header>
     </div>

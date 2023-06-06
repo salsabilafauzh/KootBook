@@ -48,6 +48,21 @@ body {
   color: #000000;
   margin: 10px;
 }
+
+#button-searchID {
+  background-color: #70a290;
+  width: 100px;
+  border-radius: 10px;
+  height: 30px;
+  border-color: black;
+  margin: 10px;
+  padding: 0px;
+  font-size: small;
+}
+#button-searchID:hover {
+  background-color: #5b8576;
+  cursor: pointer;
+}
 #table-user {
   border-spacing: 0px;
   height: 40px;

@@ -2,14 +2,7 @@
 
 class Home extends Controller
 {
-    // public function __construct()
-    // {
-    //     session_start();
-    //     if(isset($_SESSION['user'])){
-    //         header('Location: '.BASEURL.'/');
-    //         exit;
-    //     }
-    // }
+    
     public function index()
     {
         $data['namePage'] = 'Sign In';
@@ -30,11 +23,23 @@ class Home extends Controller
     public function SignIn(){
         $data = $this->model('user_model')->getUser($_POST);
         $role = $data['Role'];
-        if($this->model('user_model')->getUser($_POST) > 0 && $role == "Admin" ){
-            header('Location: '. BASEURL .'/Admin/');
+        if(isset($data) && $role != NULL){
+            if($this->model('user_model')->getUser($_POST) > 0 && $role == "Admin" ){
+                session_start();
+                $_SESSION['User'] = $data; 
+                header('Location: '. BASEURL .'/Admin/');
+            }else{
+                session_start();
+                $_SESSION['User'] = $data; 
+                header('Location: '. BASEURL .'/User/HomePage');
+            }
+
         }else{
-            $this->HomePage();
+            $_SESSION['invalid-login'] = true;
+            header('Location: '.BASEURL.'/');
+            exit;
         }
+     
     }
     public function signUpSession(){
         if($this->model('user_model')->insertUser($_POST) > 0){
@@ -60,25 +65,5 @@ class Home extends Controller
         $this->view('User/detailBuku');
         $this->view('templates/footer');
     }
-
-    // public function auth(){
-    //     if($data = $this->model('user_model')->getUser($_POST)){
-    //         if(password_verify($_POST['Password'], $data['Password'])){
-    //             session_start();
-    //             if($this->model('user_model')->getUserRole($_POST['Email']) == 'Admin'){
-    //                 $_SESSION['user'] = $data;
-    //                             header('Location: '.BASEURL.'/Admin/');
-    //                             exit;
-    //             }else{
-    //                 $_SESSION['user'] = $data;
-    //                 header('Location: '.BASEURL.'/Home/');
-    //                             exit;
-    //             }
-    //         }
-    //     }
-    //     $_SESSION['invalid-login'] = true;
-    //     header('Location: '.BASEURL.'/');
-    //     exit;
-    // }
 
 }

@@ -9,7 +9,7 @@ class user_model extends Controller{
     }
     public function getAllUser() {
         $Role = "Admin";
-        $this->db->query("SELECT * FROM user WHERE Role != '{$Role}' ");
+        $this->db->query("SELECT * FROM user WHERE Role != '{$Role}'");
         return $this->db->resultSet();
     }
     
@@ -18,13 +18,10 @@ class user_model extends Controller{
         $this->db->bind('Email', $data['Email']);
         return $this->db->single();
     }
-    // public function getUserRole($data)
-    // {
-    //     $query = `SELECT Role FROM user WHERE Email = :{$data}`;
-    //     $this->db->query($query);
-    //     $this->db->bind('Role', $data['Role']);
-    //     return $this->db->single();
-    // }
+    public function getUserId($data){
+        $this->db->query("SELECT * FROM user WHERE ID_User = '{$data}' AND Role !='Admin'");
+        return $this->db->resultSet();
+    }
 
     public function insertUser($data){
         
@@ -49,4 +46,10 @@ class user_model extends Controller{
         }
     }
 
+
+    public function hapus($data)
+    {
+        $this->db->query("DELETE FROM user WHERE ID_User = '{$data}' ");
+        return $this->db->resultSet();
+    }
 }

@@ -1,49 +1,41 @@
 <div class="container-content-admin">
     <div class="contain">
-      <div class="container">
+      <form method="post" action="<?= BASEURL?>/Admin/insertBook" class="container" enctype="multipart/form-data" id="myForm">
         <div class="kiri">
           <div class="cover">
-            <input type="file" name="" id="">
+            <input type="file" name="profile_pic" accept=".jpg, .jpeg, .png" id="">
           </div>
 
           <div class="stok">
             <h2>STOK</h2>
           </div>
-          <form action="#" method="post"></form>
+       
           <div class="isi">
-            <input type="submit"class="tambah" value="+">
-            <h3>XXXX</h3>
-            <input type="submit" class="kurang" value="-">
+            <button type="button" class="tambah">+</button>
+            <input type="text" name="Stock" id="input-stok" value="0">
+            <button type="button" class="kurang">-</button>
           </div>
         </div>
         
         <div class="kanan">
-          <form action="#" method="post">
             <table border="1" class="detail">
-            <tr>
-              <td id="judul">JUDUL</td>
-              <td><input type="text"></td>
-            </tr>
-            <tr>
-              <td id="judul">PENULIS</td>
-              <td><input type="text"></td>
-            </tr>
-            <tr>
-              <td id="judul">TAHUN TERBIT</td>
-              <td><input type="text"></td>
-            </tr>
-            <tr>
-              <td id="judul">HALAMAN</td>
-              <td><input type="text"></td>
-            </tr>
-            <tr>
-              <td id="judul">EDISI</td>
-              <td><input type="text"></td>
-            </tr>
-            <tr>
-              <td id="judul">BAHASA</td>
-              <td><input type="text"></td>
-            </tr>
+        <tr>
+          <td id="Judul">JUDUL</td>
+          <td><input type="text" name="Judul"></td>
+        </tr>
+        <tr>
+          <td id="Penulis">PENULIS</td>
+          <td><input type="text" name="Penulis"></td>
+        </tr>
+        <tr>
+          <td id="Penerbit">PENERBIT</td>
+          <td><input type="text" name="Penerbit"></td>
+        </tr>
+        <tr>
+          <td id="Tahun_Terbit">TAHUN TERBIT</td>
+          <td><input type="text" name="Tahun_Terbit"></td>
+        </tr>
+
           </table>
 
           <table border="1" class="deskripsi" cellpadding="20">
@@ -52,15 +44,35 @@
             </tr>
             <tr>
               <td id="isi_desk">
-                <textarea id="isi_desk_input" rows="5"> </textarea>
+                <textarea id="isi_desk_input" rows="5" name="Sinopsis"> </textarea>
               </td>
             </tr>
-          
           </table>
           <input type="submit" class="tombol" value="TAMBAH BUKU">
-          </form>
         </div>
       </div>
-   
     </div>
     </div>
+
+
+
+<script>
+
+  var stokInput = document.getElementById("input-stok");
+  var tambahButton = document.querySelector(".tambah");
+  var kurangButton = document.querySelector(".kurang");
+
+  tambahButton.addEventListener("click", function() {
+    var stok = parseInt(stokInput.value);
+    stok++;
+    stokInput.value = stok;
+  });
+
+  kurangButton.addEventListener("click", function() {
+    var stok = parseInt(stokInput.value);
+    if (stok > 0) {
+      stok--;
+      stokInput.value = stok;
+    }
+  });
+</script>
