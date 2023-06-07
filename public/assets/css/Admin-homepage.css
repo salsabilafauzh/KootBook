@@ -14,8 +14,8 @@ body {
   padding-right: 40px;
 }
 
-.header-image{
-  background-image: url('../images/Admin-homepage-header.png');
+.header-image {
+  background-image: url("../images/Admin-homepage-header.png");
 }
 
 * {
