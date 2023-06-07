@@ -22,7 +22,7 @@ body {
   align-items: start;
 }
 
-.search-bar-admin{
+.search-bar-admin {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -230,7 +230,7 @@ h3 {
   background-color: aquamarine;
 }
 
-.bulet:hover{
+.bulet:hover {
   background-color: rgb(9, 161, 111);
 }
 

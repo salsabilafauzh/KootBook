@@ -5,14 +5,14 @@
 
 body {
   /* height: 1000px; */
-  background-image: url('../images/Background-SignInSignUp.jpg');
+  background-image: url("../images/Background-SignInSignUp.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   /* align-items: center; */
   margin-top: 100px;
   justify-content: center;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   overflow: hidden;
 }
 

@@ -2,6 +2,7 @@
     <title>Details_buku</title>
     <link rel="stylesheet" href="detail-buku.css">
 </head>
+
 <body>
     <div class="container-detail">
         <div class="kiri">

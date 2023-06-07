@@ -8,12 +8,24 @@
                 <p>Cover Buku</p>
             </div>
             <div class="Detail_Buku1">
-                <div class="DB1_Isi"><p>Judul</p></div>
-                <div class="DB1_Isi"><p>Penulis</p></div>
-                <div class="DB1_Isi"><p>Tahun Terbit</p></div>
-                <div class="DB1_Isi"><p>Jumlah Halaman</p></div>
-                <div class="DB1_Isi"><p>Edisi</p></div>
-                <div class="DB1_Isi"><p>Bahasa</p></div>
+                <div class="DB1_Isi">
+                    <p>Judul</p>
+                </div>
+                <div class="DB1_Isi">
+                    <p>Penulis</p>
+                </div>
+                <div class="DB1_Isi">
+                    <p>Tahun Terbit</p>
+                </div>
+                <div class="DB1_Isi">
+                    <p>Jumlah Halaman</p>
+                </div>
+                <div class="DB1_Isi">
+                    <p>Edisi</p>
+                </div>
+                <div class="DB1_Isi">
+                    <p>Bahasa</p>
+                </div>
             </div>
         </div>
         <div class="Pinjam_Buku">

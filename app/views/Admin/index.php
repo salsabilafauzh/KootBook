@@ -1,5 +1,5 @@
 <div class="container-content-admin">
-    <h1>Selamat Datang, <?=$data['nama-admin']?></h1>
+    <h1>Selamat Datang, <?= $data['nama-admin'] ?></h1>
     <h2>Overview</h2>
     <div class="overview">
         <div class="kotak">

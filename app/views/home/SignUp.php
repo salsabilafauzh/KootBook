@@ -1,5 +1,5 @@
 <div class="container-signin">
-    <form action="<?= BASEURL?>/Home/signUpSession" method="post">
+    <form action="<?= BASEURL ?>/Home/signUpSession" method="post">
         <div class="signup-text">
             <h1 class="text">Sign Up</h1>
         </div>
@@ -12,8 +12,8 @@
                 <input type="submit" class="tombol" value="Sign Up">
             </div>
             <div class="kotak">
-                <p>Sudah memiliki akun? <a href="<?= BASEURL ?>/">Login disini</a></p> 
-            </div> 
+                <p>Sudah memiliki akun? <a href="<?= BASEURL ?>/">Login disini</a></p>
+            </div>
         </div>
     </form>
 </div>
