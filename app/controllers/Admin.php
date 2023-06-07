@@ -53,10 +53,6 @@ class Admin extends Controller
         if($this->model('user_model')->hapusUser($id) > 0){
             header('Location: '.BASEURL.'/Admin/listUser');
             exit;
-        }else{
-            //ALERTTTT
-            header('Location: ' . BASEURL . '/Admin/listUser');
-            exit;
         }
     }
    
@@ -103,6 +99,13 @@ class Admin extends Controller
 
         $this->view('Admin/update_buku_detail',$data['data-buku'][0]);
         $this->view('templates/footer');
+    }
+
+    public function deleteBuku($id){
+        if($this->model('book_model')->hapusBuku($id) > 0){
+            header('Location: '.BASEURL.'/Admin/updateBuku');
+            exit;
+        }
     }
 
     public function cekPeminjam()

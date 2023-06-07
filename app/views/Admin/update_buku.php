@@ -58,7 +58,7 @@
                 <a href="<?= BASEURL ?>/Admin/updateBukuDetail/<?=$book['ID_Buku']?>">
                     <button class="update" type="submit">Update</button>
                 </a>
-                <a href="">
+                <a href="<?= BASEURL ?>/Admin/deleteBuku/<?=$book['ID_Buku']?>"">
                     <button class="delete">Delete</button>
                 </a>
             </div>
