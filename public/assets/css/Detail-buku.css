@@ -40,7 +40,7 @@ body {
   background-color: transparent;
 }
 
-/* .mainbar img:first-of-type {
+.mainbar img:first-of-type {
   width: 140px;
   height: 140px;
   margin-right: 10px;
@@ -48,7 +48,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   left: 30px;
-} */
+}
 
 .mainbar img {
   position: absolute;
@@ -132,6 +132,29 @@ body {
   display: flex;
   margin-top: 10px;
   justify-content: center;
+}
+
+.Submit p {
+  text-align: center;
+  font-size: 15px;
+}
+
+.Submit_Button2 input {
+  background-color: #2d2f3f;
+  color: white;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  margin-right: 200px;
+}
+
+.Submit_Button1 input {
+  background-color: #2d2f3f;
+  color: white;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  margin-left: 200px;
 }
 
 .Submit p {
