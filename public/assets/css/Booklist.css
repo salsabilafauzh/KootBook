@@ -1,0 +1,193 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #E4E8E4;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/Background-SignInSignUp.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    overflow: overlay;
+  }
+  
+  .div1 {
+    background: grey;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    height: 20px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+
+.mainbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(142, 195, 176, 0.7);
+}
+
+.mainbar img:first-of-type {
+    width: 140px;
+    height: 140px;
+    margin-right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+}
+
+.mainbar img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.mainbar p{
+    text-align: center;
+    font-size: 24px;
+    color: #2D2F3F;
+    font-weight: bold;
+}
+
+/* Search Bar */
+.search_container{
+    margin-top: 20px;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #8EC3B0;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #8EC3B0;
+  }
+  
+  .searchTerm:focus{
+    color: #8EC3B0;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 34px;
+    border: 1px solid #8EC3B0;
+    background: #8EC3B0;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 60%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* ------------------------------------------- */
+  
+  /* Buku */
+  .bl_Container {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 3%;
+    margin-right: 3%;
+    justify-content: center;
+  }
+  
+  .cover_buku :first-of-type{
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cover_buku {
+    margin-left: 15px;
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cover_buku img {
+    width: 150px;
+    height: 200px;
+  }
+
+  .cover_buku input[type="button"] {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    border: none;
+    color: black;
+    background-color: transparent;
+    cursor: pointer;
+    white-space: normal;
+    background-color: #9ED5C5;
+    border-radius: 8px;
+  }
+  
+  .cover_buku input[type="button"]:hover {
+    color: white;
+  }
+  /* ------------------ */
+
+  #back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #8EC3B0;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 20px;
+    display: none;
+  }
+  
+  #back-to-top i {
+    position: relative;
+    top: 50%;
+    transform: translateY(-100%);
+  }

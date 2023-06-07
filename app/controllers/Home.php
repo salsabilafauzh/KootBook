@@ -82,5 +82,13 @@ class Home extends Controller
         $this->view('templates/footer');
     }
 
+    public function booklist(){
+        $data['namePage'] = 'Book List';
+        $data['css'] = 'Booklist.css';
+        $this->view('templates/header',$data);
+        $this->view('User/BookList');
+        $this->view('templates/footer');
+    }
+
     
 }
