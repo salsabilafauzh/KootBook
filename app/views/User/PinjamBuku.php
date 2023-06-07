@@ -1,5 +1,5 @@
-<div class="mainbar">
-        <p>KootBook</p>
+    <div class="mainbar">
+        <img src="../assets/images/KootBook.png">
         <img src="../assets/images/Profile.png" alt="Image">
     </div>
     <div class="Container1">
