@@ -9,8 +9,8 @@
                     <ul class="links">
                         <li><a href="hemo">Home</a></li>
                         <li><a href="about">About</a></li>
-                        <li><a href="services">Services</a></li>
-                        <li><a href="contact">Contact</a></li>
+                        <li><a href="services">Book List</a></li>
+                        <li><a href="contact">History</a></li>
                     </ul>
                     <a href="<?= BASEURL ?>/" class="action_btn">Logout</a>
                     <div class="toggle_btn">
