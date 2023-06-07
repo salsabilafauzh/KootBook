@@ -192,3 +192,7 @@ button:hover {
   display: flex;
   align-items: center;
 }
+
+a{
+  text-decoration: none;
+}
