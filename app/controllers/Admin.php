@@ -47,6 +47,18 @@ class Admin extends Controller
         }
         $this->view('templates/footer');
     }
+
+    public function hapus($id)
+    {
+        if($this->model('user_model')->hapusUser($id) > 0){
+            header('Location: '.BASEURL.'/Admin/listUser');
+            exit;
+        }else{
+            //ALERTTTT
+            header('Location: ' . BASEURL . '/Admin/listUser');
+            exit;
+        }
+    }
    
     public function tambahBuku(){
         $data['namePage'] = 'Tambah Buku';
