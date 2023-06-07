@@ -40,16 +40,6 @@ body {
   background-color: transparent;
 }
 
-.mainbar img:first-of-type {
-  width: 140px;
-  height: 140px;
-  margin-right: 10px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 30px;
-}
-
 .mainbar img {
   position: absolute;
   top: 10px;
@@ -91,10 +81,9 @@ body {
 
 .DB1_Isi p {
   color: #2d2f3f;
-  font-size: 24px;
-  vertical-align: middle;
+  font-size: 1vw; 
   text-align: center;
-  font-weight: Bold;
+  font-weight: bold;
 }
 
 .Detail_buku2 {

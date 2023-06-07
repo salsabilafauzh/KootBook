@@ -1,13 +1,13 @@
     <div class="mainbar">
         <form>
-            <input type="image" src="../assets/images/Kootbook.png">
+            <input type="image" src="../../assets/images/Kootbook.png">
         </form>
-        <img src="../assets/images/Profile.png" alt="Image">
+        <img src="../../assets/images/Profile.png" alt="Image">
     </div>
     <div class="Container1">
         <div class="Container1_a">
-        <div class="Cover_Buku">
-                <img src="../assets/images/Cover-Buku.png" alt="Cover Buku">
+            <div class="Cover_Buku">
+                <img src="../../assets/images/Cover-Buku.png" alt="Cover Buku">
             </div>
             <div class="Detail_Buku1">
                 <div class="DB1_Isi">
@@ -17,17 +17,11 @@
                     <p><?=$data['book'][0]['Penulis']?></p>
                 </div>
                 <div class="DB1_Isi">
-<<<<<<< HEAD
                     <p><?=$data['book'][0]['Tahun_Terbit']?></p>
-=======
-                    <p>penerbit</p>
-                </div>
-                <div class="DB1_Isi">
-                    <p>Tahun Terbit</p>
->>>>>>> fdfd6db3dfeaef988b5c25495cba8cc0f411203e
                 </div>
             </div>
         </div>
+        
         <div class="Pinjam_Buku">
             <p>Peminjaman Buku</p>
             <form>
