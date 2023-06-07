@@ -48,14 +48,17 @@ html, body {
     background-color: rgba(142, 195, 176, 0.7);
 }
 
-.mainbar img:first-of-type {
-    width: 140px;
-    height: 140px;
-    margin-right: 10px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 30px;
+.mainbar input[type="image"] {
+  width: 140px;
+  height: 140px;
+  margin-right: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 .mainbar img {
