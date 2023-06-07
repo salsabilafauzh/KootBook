@@ -80,7 +80,7 @@ class Admin extends Controller
         if($data['book']){
             $this->view('Admin/update_buku',$data);
         }else{
-            $this->view('Admin/');
+            $this->view('Admin/update_buku',$data);
         }
         $this->view('templates/footer');
     }

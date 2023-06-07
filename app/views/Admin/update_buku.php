@@ -23,47 +23,49 @@
         $startIndex = ($currentPage - 1) * $limit;
         $endIndex = $startIndex + $limit - 1;
 
-        for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
-            $book = $data['book'][$i];
+        if ($totalRows != 0) {
+            for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
+                $book = $data['book'][$i];
         ?>
-            <div class="kotak">
-                <div class="bulet-kiri">
-                    <p>ID Buku <?= $book['ID_Buku'] ?></p>
-                </div>
-                <div class="cover-base">
-                    <div class="cover"></div>
-                    <div class="stok">Stok: <?= $book['Stock'] ?></div>
-                </div>
-                <div class="tabel">
-                    <table border="1">
-                        <tr>
-                            <td class="tabel-kiri">JUDUL</td>
-                            <td><?= $book['Judul'] ?></td>
-                        </tr>
-                        <tr>
-                            <td class="tabel-kiri">PENULIS</td>
-                            <td><?= $book['Penulis'] ?></td>
-                        </tr>
-                        <tr>
-                            <td class="tabel-kiri">PENERBIT</td>
-                            <td><?= $book['Penerbit'] ?></td>
-                        </tr>
-                        <tr>
-                            <td class="tabel-kiri">TAHUN TERBIT</td>
-                            <td><?= $book['Tahun_Terbit'] ?></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="update-delete">
-                    <a href="<?= BASEURL ?>/Admin/updateBukuDetail/<?= $book['ID_Buku'] ?>">
-                        <button class="update" type="submit">Update</button>
-                    </a>
-                    <a href="<?= BASEURL ?>/Admin/deleteBuku/<?= $book['ID_Buku'] ?>"">
+                <div class="kotak">
+                    <div class="bulet-kiri">
+                        <p>ID Buku <?= $book['ID_Buku'] ?></p>
+                    </div>
+                    <div class="cover-base">
+                        <div class="cover"></div>
+                        <div class="stok">Stok: <?= $book['Stock'] ?></div>
+                    </div>
+                    <div class="tabel">
+                        <table border="1">
+                            <tr>
+                                <td class="tabel-kiri">JUDUL</td>
+                                <td><?= $book['Judul'] ?></td>
+                            </tr>
+                            <tr>
+                                <td class="tabel-kiri">PENULIS</td>
+                                <td><?= $book['Penulis'] ?></td>
+                            </tr>
+                            <tr>
+                                <td class="tabel-kiri">PENERBIT</td>
+                                <td><?= $book['Penerbit'] ?></td>
+                            </tr>
+                            <tr>
+                                <td class="tabel-kiri">TAHUN TERBIT</td>
+                                <td><?= $book['Tahun_Terbit'] ?></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="update-delete">
+                        <a href="<?= BASEURL ?>/Admin/updateBukuDetail/<?= $book['ID_Buku'] ?>">
+                            <button class="update" type="submit">Update</button>
+                        </a>
+                        <a href="<?= BASEURL ?>/Admin/deleteBuku/<?= $book['ID_Buku'] ?>"">
                     <button class=" delete">Delete</button>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
         <?php
+            }
         }
         ?>
     </div>
@@ -73,11 +75,8 @@
             <a href="<?= BASEURL ?>/Admin/tambahBuku"><button>Tambah Buku</button></a>
         </div>
         <div class="bawah-kanan">
-            <div class="bulet">
-                << /div>
-                    <div class="halaman">XX</div>
-                    <div class="bulet">></div>
-            </div>
-        </div>
-
+            <div class="bulet"><</div>
+            <div class="halaman">XX</div>
+            <div class="bulet">></div>
+</div>
     </div>

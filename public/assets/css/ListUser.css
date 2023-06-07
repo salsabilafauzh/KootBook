@@ -5,6 +5,8 @@ body {
   padding: 0px;
   background: #bcead5;
   position: fixed;
+  display: flex;
+  justify-content: center;
 }
 
 .container-content-admin {
@@ -12,6 +14,12 @@ body {
   padding-top: 140px;
   border: black;
   padding-right: 40px;
+}
+
+.table-list-user{
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
 }
 
 .search-userID {
@@ -118,6 +126,6 @@ body {
   cursor: pointer;
 }
 
-a h3 {
+a h3{
   color: #000000;
 }
