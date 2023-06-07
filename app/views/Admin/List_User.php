@@ -40,8 +40,9 @@
                     echo "<td>" . $user['Username'] . "</td>";
                     echo "<td>" . $user['Email'] . "</td>";
                     echo "<td>";
+                    echo "<a href=" . BASEURL . "/Admin/hapus/" . $user['ID_User'] . "><button id='button-aksi-hapus'>HAPUS</button></a>";
                     // echo "<button id='button-aksi-edit'>EDIT</button>";
-                    echo "<button id='button-aksi-hapus'>HAPUS</button>";
+                    // echo "<button id='button-aksi-hapus'>HAPUS</button>";
                     echo "</td>";
                     echo "</tr>";
                 }

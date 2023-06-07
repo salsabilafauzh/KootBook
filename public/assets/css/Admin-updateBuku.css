@@ -5,6 +5,9 @@ body {
   padding: 0px;
   background: #bcead5;
   position: fixed;
+  display: flex;
+  align-items: start;
+  justify-content: center;
 }
 
 .container-content-admin {
@@ -13,6 +16,7 @@ body {
   border: black;
   padding-right: 40px;
   flex-direction: column;
+  width: 1000px;
 }
 /* 
   Element Search di Pinjam dan Update buku
@@ -106,6 +110,7 @@ table tr td {
   padding: 3px;
   background-color: #e3f2c1;
   width: 100%;
+  height: 40px;
 }
 
 .bawah {
@@ -114,7 +119,7 @@ table tr td {
   position: fixed;
   bottom: 0;
   margin: 20px;
-  width: 80%;
+  width: 1000px;
   /* align-items: center; */
 }
 
@@ -186,4 +191,8 @@ button:hover {
   padding: 10px;
   display: flex;
   align-items: center;
+}
+
+a{
+  text-decoration: none;
 }

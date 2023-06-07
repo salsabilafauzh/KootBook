@@ -47,6 +47,14 @@ class Admin extends Controller
         }
         $this->view('templates/footer');
     }
+
+    public function hapus($id)
+    {
+        if($this->model('user_model')->hapusUser($id) > 0){
+            header('Location: '.BASEURL.'/Admin/listUser');
+            exit;
+        }
+    }
    
     public function tambahBuku(){
         $data['namePage'] = 'Tambah Buku';
@@ -91,6 +99,13 @@ class Admin extends Controller
 
         $this->view('Admin/update_buku_detail',$data['data-buku'][0]);
         $this->view('templates/footer');
+    }
+
+    public function deleteBuku($id){
+        if($this->model('book_model')->hapusBuku($id) > 0){
+            header('Location: '.BASEURL.'/Admin/updateBuku');
+            exit;
+        }
     }
 
     public function cekPeminjam()

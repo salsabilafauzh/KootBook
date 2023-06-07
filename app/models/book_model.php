@@ -59,7 +59,7 @@ class book_model extends Controller{
                 return $this->db->rowCount();
    }
 
-    public function hapus($data)
+    public function hapusBuku($data)
     {
         $this->db->query("DELETE FROM buku WHERE ID_Buku = '{$data}' ");
         return $this->db->resultSet();
