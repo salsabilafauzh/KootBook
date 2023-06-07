@@ -62,7 +62,7 @@ class Home extends Controller
         $data['namePage'] = 'Detail Buku';
         $data['css'] = 'Detail-buku.css';
         $this->view('templates/header',$data);
-        $this->view('User/detailBuku');
+        $this->view('User/DetailBuku');
         $this->view('templates/footer');
     }
 

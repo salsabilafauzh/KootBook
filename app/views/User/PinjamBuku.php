@@ -1,11 +1,13 @@
     <div class="mainbar">
-        <img src="../assets/images/KootBook.png">
+        <form>
+            <input type="image" src="../assets/images/Kootbook.png">
+        </form>
         <img src="../assets/images/Profile.png" alt="Image">
     </div>
     <div class="Container1">
         <div class="Container1_a">
-            <div class="Cover_Buku">
-                <p>Cover Buku</p>
+        <div class="Cover_Buku">
+                <img src="../assets/images/Cover-Buku.png" alt="Cover Buku">
             </div>
             <div class="Detail_Buku1">
                 <div class="DB1_Isi">
@@ -15,16 +17,10 @@
                     <p>Penulis</p>
                 </div>
                 <div class="DB1_Isi">
+                    <p>penerbit</p>
+                </div>
+                <div class="DB1_Isi">
                     <p>Tahun Terbit</p>
-                </div>
-                <div class="DB1_Isi">
-                    <p>Jumlah Halaman</p>
-                </div>
-                <div class="DB1_Isi">
-                    <p>Edisi</p>
-                </div>
-                <div class="DB1_Isi">
-                    <p>Bahasa</p>
                 </div>
             </div>
         </div>
