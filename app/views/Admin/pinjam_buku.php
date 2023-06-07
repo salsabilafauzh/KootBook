@@ -85,18 +85,18 @@
             </div>
         </div>
 
-        <!-- <div class="bawah">
+        <div class="bawah">
             <?php
-                // Previous page link
-                if ($currentPage > 1) {
-                    echo "<a href='" . BASEURL . "/Admin/updateBuku/" . ($currentPage - 1) . "'><div class='bulet'><</div></a>";
-                }
+            // Previous page link
+            if ($currentPage > 1) {
+                echo "<a href='" . BASEURL . "/Admin/cekPeminjam/" . ($currentPage - 1) . "'><div class='bulet'><</div></a>";
+            }
 
-                echo "<div class='halaman'>" . $currentPage . "</div>";
+            echo "<div class='halaman'>" . $currentPage . "</div>";
 
-                // Next page link
-                if ($currentPage < $totalPages) {
-                    echo "<a href='" . BASEURL . "/Admin/updateBuku/" . ($currentPage + 1) . "'><div class='bulet'>></div></a>";
-                }
+            // Next page link
+            if ($currentPage < $totalPages) {
+                echo "<a href='" . BASEURL . "/Admin/cekPeminjam/" . ($currentPage + 1) . "'><div class='bulet'>></div></a>";
+            }
             ?>
-        </div> -->
+        </div>
