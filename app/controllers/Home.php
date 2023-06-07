@@ -74,5 +74,13 @@ class Home extends Controller
         $this->view('templates/footer');
     }
 
+    public function About(){
+        $data['namePage'] = 'About KootBook';
+        $data['css'] = 'About.css';
+        $this->view('templates/header',$data);
+        $this->view('User/About');
+        $this->view('templates/footer');
+    }
+
     
 }

@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #E4E8E4;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/Background-SignInSignUp.jpg');
+    background-size: cover;
+}
+
+.mainbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(142, 195, 176, 0.7);
+}
+
+.mainbar img:first-of-type {
+    width: 140px;
+    height: 140px;
+    margin-right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+}
+
+.mainbar img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.mainbar p{
+    text-align: center;
+    font-size: 24px;
+    color: #2D2F3F;
+    font-weight: bold;
+}
+
+.About_Container{
+    display: flex;
+}
+
+.AContent{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 50%;
+    height: 520px;
+    background-color: #BCEAD5;
+    border-radius: 20px;
+    border: 3px solid black;
+}
+
+.AContent h1{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #2D2F3F;
+}
+
+.AContent img {
+    margin: -60px auto;
+    width: 250px;
+    height: 250px;
+    display: block;
+}
+
+.AContent p{
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.AContent table,td{
+    margin: 30px auto;
+    font-size: 24px;
+    width: 90%;
+}
