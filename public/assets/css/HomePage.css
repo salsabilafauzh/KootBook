@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   /* box-sizing: border-box; */
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -21,7 +21,7 @@ body {
   padding: 0;
   margin: 0;
   height: 100vh;
-  background-image: url("../images/Background-SignInSignUp.jpg");
+  background-image: url('../images/Background-SignInSignUp.jpg');
   background-size: cover;
   background-position: center;
   overflow-y: hidden;
@@ -200,7 +200,15 @@ header {
   z-index: 1;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
+.search-icon button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 22px;
+  cursor: pointer;
+  color: #fff;
+}
 .search-box .search-icon.active {
   right: 20px;
   height: 50px;
@@ -286,18 +294,35 @@ header {
   gap: 12px;
   scroll-snap-type: x mandatory;
   scroll-padding: 24px;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 /* Isi Itemnya */
 .item {
   background-color: #8ec3b0;
   flex: 0 0 auto;
-  padding: 24px;
+  /* padding: 24px; */
   border-radius: 8px;
   scroll-snap-align: start;
-  width: 150px;
+  width: 180px;
+  height: 225;
   word-wrap: break-word;
+  background-image: url('../images/Cover-Buku.png');
+}
+.item:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+.item .desc {
+  width: 180px;
+  height: 50px;
+  background-color: #b44345;
+  word-wrap: break-word;
+  font-size: small;
+  color: #fff;
+}
+.item .desc p {
+  padding: 10px;
 }
 
 /* Button buat mencet kana dan kiri */
@@ -361,12 +386,12 @@ footer {
     font-size: 13px;
     line-height: 20px; */
 }
-a img {
-  /* position: relative;
+/* a img {
+  position: relative;
     height: 120px;
     width: 120px;
-    display: flex; */
-}
+    display: flex;
+} */
 /* ------ */
 
 @media (max-width: 992px) {

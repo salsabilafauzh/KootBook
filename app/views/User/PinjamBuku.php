@@ -9,22 +9,13 @@
             </div>
             <div class="Detail_Buku1">
                 <div class="DB1_Isi">
-                    <p>Judul</p>
+                    <p><?=$data['book'][0]['Judul']?></p>
                 </div>
                 <div class="DB1_Isi">
-                    <p>Penulis</p>
+                    <p><?=$data['book'][0]['Penulis']?></p>
                 </div>
                 <div class="DB1_Isi">
-                    <p>Tahun Terbit</p>
-                </div>
-                <div class="DB1_Isi">
-                    <p>Jumlah Halaman</p>
-                </div>
-                <div class="DB1_Isi">
-                    <p>Edisi</p>
-                </div>
-                <div class="DB1_Isi">
-                    <p>Bahasa</p>
+                    <p><?=$data['book'][0]['Tahun_Terbit']?></p>
                 </div>
             </div>
         </div>

@@ -5,43 +5,43 @@
         <p>List Buku</p>
         <img src="../../public/assets/images/Profile.png" alt="Image">
     </div>
-    <div class="search_container">
+    <div class="search_container" >
         <div class="wrap">
-            <div class="search">
-                <input type="text" class="searchTerm" placeholder="Cari buku...">
+            <form class="search" action="<?= BASEURL ?>/User/cariBuku" method="post">
+                <input type="text" class="searchTerm" placeholder="Cari buku..." name="query" >
                 <button type="submit" class="searchButton">
                     <i class="fa fa-search"></i>
                 </button>
+            </form>
             </div>
         </div>
     </div>
-
     <div class="bl_Container">
-        <div class="cover_buku">
-            <img src="../../public/assets/images/Cover-Buku.png">
-            <input type="button" value="Tinjauan Layanan Keuangan Digital Perbankan">
-        </div>
-        <div class="cover_buku">
-            <img src="../../public/assets/images/Cover-Buku.png">
-            <input type="button" value="Cara mengasuh anak menjadi istri">
-        </div>
-        <div class="cover_buku">
-            <img src="../../public/assets/images/Cover-Buku.png">
-            <input type="button" value="Cara mengasuh anak menjadi istri">
-        </div>
-        <div class="cover_buku">
-            <img src="../../public/assets/images/Cover-Buku.png">
-            <input type="button" value="Cara mengasuh anak menjadi istri">
-        </div>
-        <div class="cover_buku">
-            <img src="../../public/assets/images/Cover-Buku.png">
-            <input type="button" value="Cara mengasuh anak menjadi istri">
-        </div>
-        <div class="cover_buku">
-            <img src="../../public/assets/images/Cover-Buku.png">
-            <input type="button" value="Cara mengasuh anak menjadi istri">
-        </div>
-    </div>
+    <?php
+    $book = $data['book'];
+    $limit = 6;
+    $counter = 0;
+    foreach ($book as $item) {
+        if ($counter >= $limit) {
+            echo '</div>';
+            echo '<div class="bl_Container">'; 
+            $counter = 0; 
+        }
+    ?>
+
+    <form class="cover_buku" action="<?= BASEURL ?>/User/DetailBuku/<?=$item['ID_Buku']?>" method="post">
+        <img src="../../public/assets/images/Cover-Buku.png">
+        <input type="submit" value="<?= $item['Judul'] ?>">
+    </form>
+
+    <?php
+        $counter++;
+    }
+    ?>
+
+</div>
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">

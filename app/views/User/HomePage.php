@@ -4,20 +4,20 @@
             <header>
                 <div class="navbar">
                     <div class="logo">
-                        <a href="#"><img src="../../public/assets/images/Kootbook.png" alt=""></a>
+                        <a href=""><img src="../../public/assets/images/Kootbook.png" alt=""></a>
                     </div>
                     <ul class="links">
-                        <li><a href="hemo">Home</a></li>
+                        <li><a href="">Home</a></li>
                         <li><a href="about">About</a></li>
-                        <li><a href="services">Book List</a></li>
+                        <li><a href="booklistPage">Book List</a></li>
                         <li><a href="contact">History</a></li>
                     </ul>
-                    <a href="<?= BASEURL ?>/" class="action_btn">Logout</a>
+                    <a href="<?= BASEURL ?>/User/logout" class="action_btn">Logout</a>
                     <div class="toggle_btn">
                         <i class="fa-solid fa-bars"></i>
                     </div>
                 </div>
-                <div class="dropdown_menu ">
+                <div class="dropdown_menu">
                     <li><a href="hemo">Home</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="services">Services</a></li>
@@ -26,38 +26,49 @@
                 </div>
             </header>
         </div>
-        <div class="search-box">
+        <!-- <form class="search-box">
 
             <div class="search-icon">
-                <i class="fas fa-search"></i>
+                <button type="submit"><i class="fas fa-search"></i></button>
             </div>
             <div class="cancel-icon">
                 <i class="fas fa-times"></i>
             </div>
             <input type="text" placeholder="Mau cari buku apa?">
+        </form> -->
+        <form class="search-box" action="<?= BASEURL ?>/User/cariBuku" method="post">
+        <div class="cancel-icon">
+            <i class="fas fa-times"></i>
         </div>
+        <input type="text" id="searchInput" placeholder="Mau cari buku apa?" name="query">
+        <div class="search-icon">
+            <button type="submit" id="searchButton" onclick="return validateForm()"><i class="fas fa-search"></i></button>
+        </div>
+        </form>
 
         <br><br>
         <div class="search-data"></div>
-        <div class="warta-pustaka">
+        <!-- <div class="warta-pustaka">
             <div class="warta-header">
 
             </div>
-        </div>
+        </div> -->
+       
+        
         <div class="rekomendasi">
             <div class="container-side">
                 <button class="scroll-button prev-button">&#10094;</button>
                 <div class="items-container">
-                    <div class="item">Item 1</div>
-                    <div class="item">Item 2</div>
-                    <div class="item">Item 3</div>
-                    <div class="item">Item 4</div>
-                    <div class="item">Item 5</div>
-                    <div class="item">Item 6</div>
-                    <div class="item">Item 7</div>
-                    <div class="item">Item 8</div>
-                    <div class="item">Item 9</div>
-                    <div class="item">Item 10</div>
+                <?php
+                    foreach ($data['book'] as $row) {
+                        echo "<a href='" . BASEURL . "/User/DetailBuku/" . $row['ID_Buku'] . "' class='item'>";
+                        echo "<div class='desc'>";
+                        echo "<p>" . $row['Judul'] . "</p>";
+                        echo "</div>";
+                        echo "</a>";
+                    }
+                    ?>
+
                 </div>
                 <button class="scroll-button next-button">&#10095;</button>
             </div>
@@ -86,7 +97,7 @@
     const searchBox = document.querySelector(".search-box");
     const searchBtn = document.querySelector(".search-icon");
     const cancelBtn = document.querySelector(".cancel-icon");
-    const searchInput = document.querySelector("input");
+    var searchInput = document.querySelector("input");
     const searchData = document.querySelector(".search-data");
     searchBtn.onclick = () => {
         searchBox.classList.add("active");
@@ -148,4 +159,17 @@
             });
         }, 500);
     });
+
+
+    var searchButton = document.getElementById('searchButton');
+    var searchInput = document.getElementById('searchInput');
+    
+   
+    function validateForm() {
+  
+        if (searchInput.value.trim() === '') {
+            return false;
+        }
+        return true;
+    }
 </script>

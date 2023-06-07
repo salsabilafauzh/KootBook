@@ -1,36 +1,45 @@
-<head>
-    <title>Details_buku</title>
-    <link rel="stylesheet" href="detail-buku.css">
-</head>
-
-<body>
-    <div class="container-detail">
-        <div class="kiri">
-            <div class="cover">
-                <img src="Cover-Buku.png" alt="">
+<div class="mainbar">
+        <form>
+            <input type="image" src="../../../public/assets/images/Kootbook.png">
+        </form>
+        <img src="../../../public/assets/images/Profile.png" alt="Image">
+    </div>
+    <div class="Container1">
+        <div class="Container1_a">
+            <div class="Cover_Buku">
+                <img src="../../../public/assets/images/Cover-Buku.png" alt="Cover Buku">
             </div>
-            <div class="detailBuku">
-                <div class="box">Judul</div>
-                <div class="box">Penulis</div>
-                <div class="box">Tahun Terbit</div>
-                <div class="box">Jumlah halaman</div>
-                <div class="box">Edisi</div>
-                <div class="box">Bahasa</div>
+            <div class="Detail_Buku1">
+                <div class="DB1_Isi">
+                    <p><?=$data['book'][0]['Judul']?></p>
+                </div>
+                <div class="DB1_Isi">
+                    <p><?=$data['book'][0]['Penulis']?></p>
+                </div>
+                <div class="DB1_Isi">
+                    <p><?=$data['book'][0]['Penerbit']?></p>
+                </div>
+                <div class="DB1_Isi">
+                    <p><?=$data['book'][0]['Tahun_Terbit']?></p>
+                </div>
             </div>
         </div>
-        <div class="kanan">
-            <div class="container">
-                <h1>Tinjauan Layanan Keuangan Digital Perbankan</h1>
-                <h3>Penulis</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim harum ratione sequi. Ipsa eaque inventore eum voluptatum porro sint expedita quos, non laborum, cum cupiditate consequuntur ipsam neque repudiandae eveniet quisquam excepturi, suscipit labore. Autem odit vitae necessitatibus. Harum, quisquam! Necessitatibus porro maiores sed voluptatum quia sit reprehenderit voluptates dicta nulla commodi. Dolorum sunt cupiditate quae blanditiis, quod ad omnis aperiam ea enim labore qui laboriosam, repudiandae accusamus fuga pariatur eum magnam laborum, iure modi nobis magni ut! Modi minima quos earum corrupti tempora optio, blanditiis voluptatibus reiciendis ipsam temporibus repellendus error provident ullam quae necessitatibus, voluptas officia amet maxime officiis debitis. Saepe esse tempora explicabo nisi. Quas, eligendi. Veniam excepturi quis quam molestias quod nam, asperiores voluptatem. Consequuntur, laudantium? Corporis nulla perspiciatis at expedita et sed quaerat omnis. Cum officiis odit sequi doloremque sed deleniti odio distinctio aliquid laboriosam repudiandae totam dolorem suscipit quia nostrum eius, beatae fugit nam voluptatem similique reiciendis et! Voluptatem obcaecati vitae pariatur, error voluptas accusantium quidem nihil commodi facere voluptatibus quisquam cum cumque veritatis explicabo, labore natus amet quos ducimus deserunt. Totam voluptate, magnam nesciunt maxime reprehenderit similique dolor quae assumenda laboriosam quo quibusdam sed, natus molestiae a ea cum illo nemo fugit consequatur qui ex blanditiis molestias distinctio. Quam provident suscipit tempora? Nesciunt itaque inventore officiis aspernatur sit laboriosam amet ex alias doloremque illo? Esse harum, quos nam placeat magni quia ipsum veniam. Magnam dolores ex cumque saepe aut quos dicta quibusdam modi dolorum ab ducimus natus, quo sapiente odit optio id, provident, aspernatur blanditiis. Quidem quaerat iure suscipit, culpa perspiciatis quo autem consequatur porro veniam inventore eaque tempora itaque eos ab commodi veritatis quia architecto est et incidunt delectus. In, eos distinctio dolor assumenda incidunt qui dolorum sint minus illum iusto accusamus rem? Unde perferendis cupiditate rem corporis recusandae? Eveniet, quae voluptatem.
-                </p>
-                <br><br><br>
-                <div class="kananBawah">
-                    <button>Favorite</button>
-                    <button>Pinjam Buku</button>
+        <div class="Detail_buku2">
+            <h1><?=$data['book'][0]['Judul']?></h1>
+            <p><?=$data['book'][0]['Penulis']?></p>
+            <p>
+            <?=$data['book'][0]['Sinopsis']?>
+            </p>
+            <form action="<?= BASEURL ?>/User/PinjamBuku/<?=$data['book'][0]['ID_Buku']?>" method="post">
+                <div class="Submit">
+                    <div class="Submit_Button2">
+                        <input type="button" id="Cancel" value="Favorit">
+                    </div>
+                    <p>Stock Buku : <?=$data['book'][0]['Stock']?></p>
+                    <div class="Submit_Button1">
+                        <input type="submit" id="Pinjam" value="Pinjam">
+                    </div>
                 </div>
-                <h3>STOK : XX</h3>
-            </div>
+            </form>
         </div>
     </div>
-</body>

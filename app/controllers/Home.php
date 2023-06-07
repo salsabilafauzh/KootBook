@@ -31,7 +31,7 @@ class Home extends Controller
             }else{
                 session_start();
                 $_SESSION['User'] = $data; 
-                header('Location: '. BASEURL .'/User/HomePage');
+                header('Location: '. BASEURL .'/User/');
             }
 
         }else{
@@ -50,45 +50,4 @@ class Home extends Controller
         }
     }
 
-    public function HomePage(){
-        $data['namePage'] = 'Home Page';
-        $data['css'] = 'HomePage.css';
-        $this->view('templates/header',$data);
-        $this->view('User/HomePage');
-        $this->view('templates/footer');
-    }
-
-    public function DetailBuku(){
-        $data['namePage'] = 'Detail Buku';
-        $data['css'] = 'Detail-buku.css';
-        $this->view('templates/header',$data);
-        $this->view('User/detailBuku');
-        $this->view('templates/footer');
-    }
-
-    public function PinjamBuku(){
-        $data['namePage'] = 'Pinjam Buku';
-        $data['css'] = 'PinjamBuku.css';
-        $this->view('templates/header',$data);
-        $this->view('User/PinjamBuku');
-        $this->view('templates/footer');
-    }
-
-    public function About(){
-        $data['namePage'] = 'About KootBook';
-        $data['css'] = 'About.css';
-        $this->view('templates/header',$data);
-        $this->view('User/About');
-        $this->view('templates/footer');
-    }
-
-    public function booklist(){
-        $data['namePage'] = 'Book List';
-        $data['css'] = 'Booklist.css';
-        $this->view('templates/header',$data);
-        $this->view('User/BookList');
-        $this->view('templates/footer');
-    }
-
-    
 }

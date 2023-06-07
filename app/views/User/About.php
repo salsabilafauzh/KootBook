@@ -1,7 +1,7 @@
     <div class="mainbar">
-        <img src='../../public/assets/images/Kootbook.png'>
+        <img src='../../public/assets/images/Kootbook.png' id="img-about-mainbar">
         <p>About KootBook</p>
-        <img src='../../public/assets/images/Profile.png' alt="Image">
+        <img src='../../public/assets/images/Profile.png' alt="Image" id="img-about-mainbar">
     </div>
     <div class="About_Container">
         <div class="AContent">

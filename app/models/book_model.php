@@ -6,6 +6,23 @@ class book_model extends Controller{
     {
         $this->db = new Database();
     }
+
+    public function searchBookQuery($query) {
+        $query = "SELECT * FROM buku WHERE Penulis LIKE '%$query%' OR Judul LIKE '%$query%'";
+        $this->db->query($query);
+        $data = $this->db->resultSet();
+        if($data != NULL){
+            return $data[0]['ID_Buku'];
+        }else{
+            return 0;
+        }
+        
+    }
+
+/**
+ * 
+ * GET FUNCTION
+ */
     public function getAllBook() {
         $this->db->query("SELECT * FROM buku");
         return $this->db->resultSet();
@@ -26,6 +43,12 @@ class book_model extends Controller{
         $total = $result['total'];
         return (int)$total;
     }
+
+
+/**
+ * 
+ * INSERT ATAU PUT FUNCTION
+ */
     public function insertBook($data){
          if($this-> getBook($data['Judul']) > 0){
                 //BUTUH ALERT EMAIL SUDAH TERDAFTAR
@@ -59,9 +82,16 @@ class book_model extends Controller{
                 return $this->db->rowCount();
    }
 
+/**
+ * 
+ * DELETE FUNCTION
+ */
     public function hapusBuku($data)
     {
         $this->db->query("DELETE FROM buku WHERE ID_Buku = '{$data}' ");
         return $this->db->resultSet();
     }
+
+
+    
 }
