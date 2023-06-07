@@ -85,10 +85,18 @@
             </div>
         </div>
 
-        <div class="bawah">
-            <div class="bulet">
-                << /div>
-                    <div class="tulisan">1</div>
-                    <div class="bulet">></div>
-            </div>
-        </div>
+        <!-- <div class="bawah">
+            <?php
+                // Previous page link
+                if ($currentPage > 1) {
+                    echo "<a href='" . BASEURL . "/Admin/updateBuku/" . ($currentPage - 1) . "'><div class='bulet'><</div></a>";
+                }
+
+                echo "<div class='halaman'>" . $currentPage . "</div>";
+
+                // Next page link
+                if ($currentPage < $totalPages) {
+                    echo "<a href='" . BASEURL . "/Admin/updateBuku/" . ($currentPage + 1) . "'><div class='bulet'>></div></a>";
+                }
+            ?>
+        </div> -->

@@ -24,7 +24,7 @@
             $totalRows = count($data['user']);
             $limit = 6;
             if (isset($data['page'])) {
-                $currentPage = $data;
+                $currentPage = $data['page'];
             } else {
                 $currentPage = 1;
             }
@@ -40,7 +40,7 @@
                 echo "<td>" . $user['Username'] . "</td>";
                 echo "<td>" . $user['Email'] . "</td>";
                 echo "<td>";
-                echo "<a href=" . BASEURL . "/Admin/hapus/" . $user['ID_User'] . "><button id='button-aksi-hapus'>HAPUS</button></a>";
+                echo "<a href=" . BASEURL . "/Admin/hapus/" . $user['ID_User'] . "/" . $currentPage . "><button id='button-aksi-hapus'>HAPUS</button></a>";
                 // echo "<button id='button-aksi-edit'>EDIT</button>";
                 // echo "<button id='button-aksi-hapus'>HAPUS</button>";
                 echo "</td>";
@@ -57,7 +57,7 @@
 
             // Previous page link
             if ($currentPage > 1) {
-                echo "<li><a href='?page=" . ($currentPage - 1) . "'>&laquo; Previous</a></li>";
+                echo "<li><a href=" . BASEURL . "/Admin/listUser/" . $currentPage - 1 . "><button>&laquo; Previous</button></a></li>";
             }
 
             // Page links
@@ -66,12 +66,12 @@
                 if ($i == $currentPage) {
                     echo " class='active'";
                 }
-                echo "><a href='?page=" . $i . "'><button>" . $i . "</button></a></li>";
+                echo "><a href=" . BASEURL . "/Admin/listUser/" . $i . "><button>" . $i . "</button></a></li>";
             }
 
             // Next page link
             if ($currentPage < $totalPages) {
-                echo "<li><a href='?page=" . ($currentPage + 1) . "'><button>Next &raquo;</button></a></li>";
+                echo "<li><a href=" . BASEURL . "/Admin/listUser/" . $currentPage + 1 . "><button>Next &raquo;</button></a></li>";
             }
 
             echo "</ul>";

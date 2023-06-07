@@ -28,12 +28,12 @@ class Admin extends Controller
         $this->view('templates/footer');
 
     }
-    public function listUser()
+    public function listUser($params)
     {
         $data['namePage'] = 'List-User';
         $data['css'] = 'ListUser.css';
         $data['header'] = 'Manajemen User';
-        // $data['index-page'] = $params;
+        $data['page'] = $params;
         $this->view('templates/header',$data);
         $this->view('Admin/templates/header',$data);
         $this->view('Admin/templates/sidebar');
@@ -48,10 +48,10 @@ class Admin extends Controller
         $this->view('templates/footer');
     }
 
-    public function hapus($id)
+    public function hapus($id, $index)
     {
         if($this->model('user_model')->hapusUser($id) > 0){
-            header('Location: '.BASEURL.'/Admin/listUser');
+            header('Location: '.BASEURL.'/Admin/listUser/' . $index);
             exit;
         }
     }
@@ -67,11 +67,11 @@ class Admin extends Controller
         $this->view('templates/footer');
     }
 
-    public function updateBuku(){
+    public function updateBuku($params){
         $data['namePage'] = 'Update Buku';
         $data['css'] = 'Admin-updateBuku.css';
         $data['header'] = 'Update Buku';
-        
+        $data['page'] = $params;
         $this->view('templates/header',$data);
         $this->view('Admin/templates/header',$data);
         $this->view('Admin/templates/sidebar');
@@ -174,7 +174,7 @@ class Admin extends Controller
     public function insertBook()
     {
         if($this->model('book_model')->insertBook($_POST) > 0){
-            header('Location: '.BASEURL.'/Admin/updateBuku');
+            header('Location: '.BASEURL.'/Admin/updateBuku/1');
             exit;
         }else{
             //ALERTTTT

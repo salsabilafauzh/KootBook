@@ -9,6 +9,18 @@ body {
   justify-content: center;
 }
 
+.header-image{
+  background-image: url('../images/Admin-homepage-header.png');
+}
+
+
+.header-image .container-image h1 {
+  text-align: center;
+  text-shadow: black;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
 .container-content-admin {
   padding-left: 250px;
   padding-top: 140px;

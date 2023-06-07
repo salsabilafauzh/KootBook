@@ -14,7 +14,7 @@
         $totalRows = count($data['book']);
         $limit = 2;
         if (isset($data['page'])) {
-            $currentPage = $data['page'];
+            $currentPage = (int) $data['page'];
         } else {
             $currentPage = 1;
         }
@@ -75,8 +75,19 @@
             <a href="<?= BASEURL ?>/Admin/tambahBuku"><button>Tambah Buku</button></a>
         </div>
         <div class="bawah-kanan">
-            <div class="bulet"><</div>
-            <div class="halaman">XX</div>
-            <div class="bulet">></div>
-</div>
+            <?php
+            // Previous page link
+            if ($currentPage > 1) {
+                echo "<a href='" . BASEURL . "/Admin/updateBuku/" . ($currentPage - 1) . "'><div class='bulet'><</div></a>";
+            }
+
+            echo "<div class='halaman'>" . $currentPage . "</div>";
+
+            // Next page link
+            if ($currentPage < $totalPages) {
+                echo "<a href='" . BASEURL . "/Admin/updateBuku/" . ($currentPage + 1) . "'><div class='bulet'>></div></a>";
+            }
+            ?>
+        </div>
     </div>
+</div>

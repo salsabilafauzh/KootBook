@@ -2,6 +2,10 @@
   overflow: hidden;
 }
 
+.header-image{
+  background-image: url('../images/Admin-homepage-header.png');
+}
+
 body {
   width: 100%;
   height: 100%;
