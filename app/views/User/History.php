@@ -1,12 +1,12 @@
     <div class="mainbar">
         <form>
-            <input type="image" src="../../public/assets/images/Kootbook.png">
+            <input type="image" src="../../../public/assets/images/Kootbook.png">
         </form>
     </div>
     
     <div class="Container1">
         <div class="sidebar_profile">
-            <img src="../../public/assets/images/Profile.png">
+            <img src="../../../public/assets/images/Profile.png">
             <div class="SP_Isi">
                 <p>Username</p>
             </div>
@@ -19,7 +19,7 @@
             <div class="History">
                 <div class="scrollable">
                     <div class="Isi_History">
-                        <img src="../../public/assets/images/Cover-Buku.png">
+                        <img src="../../../public/assets/images/Cover-Buku.png">
                         <table border="2px solid black">
                             <tr>
                                 <th>Judul Buku</th>
