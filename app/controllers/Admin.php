@@ -103,7 +103,7 @@ class Admin extends Controller
 
     public function deleteBuku($id){
         if($this->model('book_model')->hapusBuku($id) > 0){
-            header('Location: '.BASEURL.'/Admin/updateBuku');
+            header('Location: '.BASEURL.'/Admin/updateBuku/1');
             exit;
         }
     }
@@ -209,11 +209,10 @@ class Admin extends Controller
 
     public function updateBook($id)
     {
-
-        if(isset($_POST)){
-            $cek = $this->model('book_model')->updateBook($id,$_POST);
+        if(isset($id)){
+            $cek = $this->model('book_model')->updateBook($id);
           if ($cek > 0) {
-            header('Location: '.BASEURL.'/Admin/updateBuku');
+            header('Location: '.BASEURL.'/Admin/updateBuku/1');
           }
             exit;
         }else{

@@ -10,9 +10,9 @@ class book_model extends Controller{
     public function searchBookQuery($query) {
         $query = "SELECT * FROM buku WHERE Penulis LIKE '%$query%' OR Judul LIKE '%$query%'";
         $this->db->query($query);
-        $data = $this->db->resultSet();
-        if($data != NULL){
-            return $data[0]['ID_Buku'];
+        $data['search'] = $this->db->resultSet();
+        if($data > 0){
+            return $data['search'];
         }else{
             return 0;
         }
@@ -67,7 +67,45 @@ class book_model extends Controller{
                  return $this->db->rowCount();
              }
     }
-    public function updateBook($id,$data){
+    public function updateStock($id_buku,$stock){
+        $stock = $stock - 1;
+        // var_dump($stock);
+        $this->db->query("UPDATE buku SET Stock = '{$stock}' WHERE ID_Buku = '{$id_buku}'");
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+ 
+    public function insertPinjam($id_user,$id_buku,$Stock,$Judul)
+    {           $data = $_POST;
+             
+                $id_user = (int) $id_user;
+                // var_dump($id_user);
+                if ($this->updateStock($id_buku, (int)$Stock) > 0) {
+                    $Alasan = $_POST['Alasan'];
+                    $tanggalPinjam = date('Y-m-d', strtotime($data['Tanggal_Pinjam']));
+                    $tanggalExpired = date('Y-m-d', strtotime($data['Tanggal_Expired']));
+                
+                    $this->db->query("INSERT INTO history (ID_User, ID_Buku, Judul, Tanggal_Pinjam, Tanggal_Expired, Alasan) 
+                                      VALUES (:ID_User, :ID_Buku, :Judul, :Tanggal_Pinjam, :Tanggal_Expired, :Alasan)");
+                    $this->db->bind(':ID_User', (int)$id_user);
+                    $this->db->bind(':ID_Buku', (int)$id_buku);
+                    $this->db->bind(':Judul', $Judul);
+                    $this->db->bind(':Tanggal_Pinjam', $tanggalPinjam);
+                    $this->db->bind(':Tanggal_Expired', $tanggalExpired);
+                    $this->db->bind(':Alasan', $Alasan);
+                    $this->db->execute();
+                
+                    return $this->db->rowCount();
+                } else {
+                    return 0;
+                }
+                
+                
+                
+    }
+    public function updateBook($id){
+                $data = $_POST;
+                // var_dump($_POST);
                 $this->db->query("UPDATE buku SET Judul = :Judul, Penulis = :Penulis, Penerbit = :Penerbit, Tahun_Terbit = :Tahun_Terbit, Sinopsis = :Sinopsis, Stock = :Stock WHERE ID_Buku = :ID_Buku");
 
                 $this->db->bind('Judul', $data['Judul']);
@@ -75,13 +113,13 @@ class book_model extends Controller{
                 $this->db->bind('Penerbit', $data['Penerbit']);
                 $this->db->bind('Tahun_Terbit', $data['Tahun_Terbit']);
                 $this->db->bind('Sinopsis', $data['Sinopsis']);
-                $this->db->bind('Stock', (int) $data['Stock']);
+                $this->db->bind('Stock', (int)$data['Stock']);
                 $this->db->bind('ID_Buku', (int)$id);
 
                 $this->db->execute();
                 return $this->db->rowCount();
    }
-
+  
 /**
  * 
  * DELETE FUNCTION

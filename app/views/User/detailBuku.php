@@ -33,7 +33,7 @@
             <form action="<?= BASEURL ?>/User/PinjamBuku/<?=$data['book'][0]['ID_Buku']?>" method="post">
                 <div class="Submit">
                     <div class="Submit_Button2">
-                        <input type="button" id="Cancel" value="Favorit">
+                        <a href=""><input type="button" id="Cancel" value="Back"></a>
                     </div>
                     <p>Stock Buku : <?=$data['book'][0]['Stock']?></p>
                     <div class="Submit_Button1">

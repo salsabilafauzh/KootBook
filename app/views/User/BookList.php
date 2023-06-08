@@ -9,7 +9,7 @@
     </div>
     <div class="search_container" >
         <div class="wrap">
-            <form class="search" action="<?= BASEURL ?>/User/cariBuku" method="post">
+            <form class="search" action="<?= BASEURL ?>/User/booklistPage" method="post">
                 <input type="text" class="searchTerm" placeholder="Cari buku..." name="query" >
                 <button type="submit" class="searchButton">
                     <i class="fa fa-search"></i>

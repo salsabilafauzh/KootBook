@@ -2,7 +2,7 @@
     <div class="search-bar-admin">
 
 
-        <form action="<?= BASEURL ?>/Admin/cariBuku" method="post">
+        <form action="<?= BASEURL ?>/Admin/booklistPage" method="post">
             <input type="text" placeholder="Search ID buku" name="ID_Buku">
             <div class="search-icon">
                 <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
@@ -59,7 +59,7 @@
                         <a href="<?= BASEURL ?>/Admin/updateBukuDetail/<?= $book['ID_Buku'] ?>">
                             <button class="update" type="submit">Update</button>
                         </a>
-                        <a href="<?= BASEURL ?>/Admin/deleteBuku/<?= $book['ID_Buku'] ?>"">
+                        <a href="<?= BASEURL ?>/Admin/deleteBuku/<?= $book['ID_Buku'] ?>">
                     <button class=" delete">Delete</button>
                         </a>
                     </div>

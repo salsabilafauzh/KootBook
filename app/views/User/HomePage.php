@@ -36,7 +36,7 @@
             </div>
             <input type="text" placeholder="Mau cari buku apa?">
         </form> -->
-        <form class="search-box" action="<?= BASEURL ?>/User/cariBuku" method="post">
+        <form class="search-box" action="<?= BASEURL ?>/User/booklistPage" method="post">
         <div class="cancel-icon">
             <i class="fas fa-times"></i>
         </div>

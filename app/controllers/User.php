@@ -44,27 +44,35 @@ class User extends Controller{
         $this->view('templates/footer');
     }
 
-    public function booklistPage(){
-        $data['namePage'] = 'Book List';
-        $data['css'] = 'Booklist.css';
-        $this->view('templates/header',$data);
-        $data['book']= $this->model('book_model')->getAllBook();
-        $this->view('User/BookList',$data);
-        $this->view('templates/footer');
-    }
-    public function booklist($id){
-        $data['namePage'] = 'Book List';
-        $data['css'] = 'Booklist.css';
-        $this->view('templates/header',$data);
-        if ($id == 0 || $id == null || $id == '') {
-            $data['book']= $this->model('book_model')->getAllBook();
-        }else{
-            $data['book']= $this->model('book_model')->getBookId($id);
+    public function booklistPage()
+    {
+    $data['namePage'] = 'Book List';
+    $data['css'] = 'Booklist.css';
+    $this->view('templates/header', $data);
+
+    if (isset($_POST['query'])) {
+        $searchQuery = $_POST['query'];
+        $data['book'] = $this->model('book_model')->searchBookQuery($searchQuery);
+
+        if (isset($data['book']) && count($data['book']) > 0) {
+            $this->view('User/BookList', $data);
+        } else {
+            echo "<script>alert('Data buku tidak ditemukan');</script>";
+            $data['book'] = $this->model('book_model')->getAllBook();
+            $this->view('User/BookList', $data);
         }
-        $this->view('User/BookList',$data);
-        $this->view('templates/footer');
+    } else {
+        $data['book'] = $this->model('book_model')->getAllBook();
+        $this->view('User/BookList', $data);
     }
 
+    $this->view('templates/footer');
+    }
+
+    public function historyPage()
+    {
+         $this->view('User/History'); 
+    }
 
     /**
      * 
@@ -73,17 +81,32 @@ class User extends Controller{
 
      public function cariBuku()
     {
-        $data['query'] = $_POST['query'];
-        $data['id']= $this->model('book_model')->searchBookQuery($data['query']);
-    
-        if($data['id'] && $data['id'] != 0){
-            $this->booklist((int) $data['id']);
+        $data['book']= $this->model('book_model')->searchBookQuery($_POST['query']);
+        if(isset($data['book'])){
+            $data['namePage'] = 'Search Book';
+            $data['css'] = 'Booklist.css';
+            $this->view('templates/header',$data);
+            $this->view('User/BookList',$data);
+            $this->view('templates/footer');
         }else{
-            $this->booklist((int) $data['id']);
-            echo '<script> alert("Data tidak ditemukan"); </script>';
-        }
+            echo "<script>alert('Data buku tidak ditemukan');</script>";
+            header('Location: ' . BASEURL . '/User/booklistPage');
+            exit();
+        }    
     }
-
+    public function pinjamBukuTrigger($id){
+        $data['ID_User'] = $_SESSION['User']['ID_User'];
+        $data['book'] = $this->model('book_model')->getBookId($id);
+    
+        if (isset($data['book']) && isset($data['ID_User'])) {
+            if ($this->model('book_model')->insertPinjam($data['ID_User'], (int)$data['book'][0]['ID_Buku'], $data['book'][0]['Stock'], $data['book'][0]['Judul']) > 0) {
+                echo "<script>alert('Berhasil meminjam!'); setTimeout(function() { window.location.href = '".BASEURL."/User/historyPage/'; }, 1000);</script>";
+            } else {
+                echo "<script>alert('Error!'); setTimeout(function() { window.location.href = '".BASEURL."/User/historyPage/'; }, 1000);</script>";
+            }
+        }
+        
+    }
     public static function logout() {
         unset($_SESSION['Email']);
         header('Location: '.BASEURL.'/');
