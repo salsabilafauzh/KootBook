@@ -57,6 +57,11 @@ class book_model extends Controller{
         $this->db->query("SELECT * FROM history");
         return $this->db->resultSet();
     }
+    public function getHistoryDataID($id)
+    {
+        $this->db->query("SELECT * FROM history WHERE ID_User = '{$id}'");
+        return $this->db->resultSet();
+    }
     public function getAllHistoryJoin()
     {
         $this->db->query("SELECT u.*, b.*

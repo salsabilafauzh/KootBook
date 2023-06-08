@@ -69,12 +69,14 @@ class User extends Controller{
     $this->view('templates/footer');
     }
 
-    public function historyPage()
+    public function historyPage($id)
     {
         $data['namePage'] = 'History/Profile';
         $data['css'] = 'History.css';
+        $data['user'] = $this->model('user_model')->getUserId($id);
+        $data['history'] = $this->model('book_model')->getHistoryDataID($id);
         $this->view('templates/header',$data);
-        $this->view('User/History');
+        $this->view('User/History', $data);
         $this->view('templates/footer');
     }
 
@@ -104,9 +106,9 @@ class User extends Controller{
     
         if (isset($data['book']) && isset($data['ID_User'])) {
             if ($this->model('book_model')->insertPinjam($data['ID_User'], (int)$data['book'][0]['ID_Buku'], $data['book'][0]['Stock'], $data['book'][0]['Judul']) > 0) {
-                echo "<script>alert('Berhasil meminjam!'); setTimeout(function() { window.location.href = '".BASEURL."/User/historyPage/'; }, 1000);</script>";
+                echo "<script>alert('Berhasil meminjam!'); setTimeout(function() { window.location.href = '".BASEURL."/User/historyPage/" . $data['ID_User'] . "'; }, 1000);</script>";
             } else {
-                echo "<script>alert('Error!'); setTimeout(function() { window.location.href = '".BASEURL."/User/historyPage/'; }, 1000);</script>";
+                echo "<script>alert('Error!'); setTimeout(function() { window.location.href = '".BASEURL."/User/historyPage/" . $data['ID_User'] . "'; }, 1000);</script>";
             }
         }
         
