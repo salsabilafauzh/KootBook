@@ -105,7 +105,7 @@ class book_model extends Controller{
  
     public function insertPinjam($id_user,$id_buku,$Stock,$Judul)
     {           $data = $_POST;
-             
+                
                 $id_user = (int) $id_user;
                 // var_dump($id_user);
                 if ($this->updateStock($id_buku, (int)$Stock) > 0) {

@@ -1,9 +1,7 @@
 <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
 
     <div class="mainbar">
-        <form>
-            <input type="image" src="../assets/images/Kootbook.png">
-        </form>
+        <a href="<?= BASEURL ?>/User/"><input type="image" src="../assets/images/Kootbook.png"></a>
         <p>List Buku</p>
         <img src="../../public/assets/images/Profile.png" alt="Image">
     </div>

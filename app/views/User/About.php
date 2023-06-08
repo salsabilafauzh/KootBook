@@ -1,7 +1,7 @@
     <div class="mainbar">
-        <img src='../../public/assets/images/Kootbook.png' id="img-about-mainbar">
+        <a href="<?= BASEURL ?>/User/"><img src='../../public/assets/images/Kootbook.png' id="img-about-mainbar">
         <p>About KootBook</p>
-        <img src='../../public/assets/images/Profile.png' alt="Image" id="img-about-mainbar">
+        <img src='../../public/assets/images/Profile.png' alt="Image" id="profile">
     </div>
     <div class="About_Container">
         <div class="AContent">

@@ -10,7 +10,7 @@
                         <li><a href="">Home</a></li>
                         <li><a href="about">About</a></li>
                         <li><a href="booklistPage">Book List</a></li>
-                        <li><a href="contact">History</a></li>
+                        <li><a href="historyPage/<?= $_SESSION['User']['ID_User']?>">History</a></li>
                     </ul>
                     <a href="<?= BASEURL ?>/User/logout" class="action_btn">Logout</a>
                     <div class="toggle_btn">

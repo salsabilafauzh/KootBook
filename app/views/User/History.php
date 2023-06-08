@@ -1,8 +1,6 @@
 
  <div class="mainbar">
-        <form>
-            <input type="image" src="../../../public/assets/images/Kootbook.png">
-        </form>
+    <a href="<?= BASEURL ?>/User/"><input type="image" src="../../../public/assets/images/Kootbook.png"></a>
     </div>
     <div class="Container1">
         <div class="sidebar_profile">
