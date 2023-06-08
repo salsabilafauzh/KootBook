@@ -14,7 +14,7 @@
         <a href="<?= BASEURL ?>/Admin/updateBuku/1"><button>Update Buku</button></a>
         </li>
         <li>
-        <a href="<?= BASEURL ?>/Admin/cekPeminjam"><button>Cek Peminjam</button></a>
+        <a href="<?= BASEURL ?>/Admin/cekPeminjam/1"><button>Cek Peminjam</button></a>
         </li>
         <div class="logout-button">
         <li>

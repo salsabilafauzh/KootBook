@@ -46,7 +46,7 @@ class user_model extends Controller{
         }
     }
 
-
+    
     public function hapusUser($data)
     {
         $this->db->query("DELETE FROM user WHERE ID_User = '{$data}' ");

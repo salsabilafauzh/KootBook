@@ -2,7 +2,7 @@
   overflow: hidden;
 }
 
-.header-image{
+.header-image {
   background-image: url('../images/Admin-homepage-header.png');
 }
 
@@ -31,6 +31,7 @@ body {
   justify-content: center;
   flex-direction: column;
   margin: auto;
+  width: 95%;
 }
 /* 
   Element Search di Pinjam dan Update buku
@@ -67,10 +68,10 @@ CONTAINER CONTENT
   height: 158px;
   padding: 20px;
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   gap: 5px;
-  width: 1100px;
 }
 
 .coverBox {

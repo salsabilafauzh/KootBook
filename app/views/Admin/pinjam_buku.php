@@ -1,28 +1,49 @@
 <div class="container-content-admin">
     <div class="search-bar-admin">
-        <form action="<?= BASEURL ?>/Admin/cariBuku" method="post">
-            <input type="text" placeholder="Search ID buku" name="ID_Buku">
+        <form action="<?= BASEURL ?>/Admin/cariPinjam" method="post">
+            <input type="text" placeholder="Search.." name="">
             <div class="search-icon">
                 <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
             </div>
         </form>
+    </div>
+    <div class="persegiPanjang" id="container-data">
+        <?php
+        $totalRows = count($data['history']);
+        $limit = 2;
+        if (isset($data['page'])) {
+            $currentPage = (int) $data['page'];
+        } else {
+            $currentPage = 1;
+        }
 
-        <div class="persegiPanjang">
+        $totalPages = ceil($totalRows / $limit);
+        $startIndex = ($currentPage - 1) * $limit;
+        $endIndex = $startIndex + $limit - 1;
+
+        if ($totalRows != 0) {
+            for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
+                $pinjam = $data['history'][$i];
+                $history = $data['history-data'][$i];
+        ?>
+  
+         
             <div class="coverBox">
-                <div class="cover"></div>
+                <div class="cover">
+                </div>
                 <div class="stok">
                     <table border="1">
                         <tr class="baris1">
                             <td class="judul">STOK</td>
-                            <td class="isi">XXX</td>
+                            <td class="isi"><?= $pinjam['Stock']?></td>
                         </tr>
                         <tr class="baris2">
                             <td class="judul">ID BUKU</td>
-                            <td class="isi">XXX</td>
+                            <td class="isi"><?= $pinjam['ID_Buku']?></td>
                         </tr>
                         <tr class="baris3">
                             <td class="judul">JUDUL</td>
-                            <td class="isi">XXX</td>
+                            <td class="isi"><?= $pinjam['Judul']?></td>
                         </tr>
                     </table>
                 </div>
@@ -37,11 +58,11 @@
                         <table border="1">
                             <tr>
                                 <td class="hijauTua">ID USER</td>
-                                <td class="hijauMuda">XXXX</td>
+                                <td class="hijauMuda"><?= $pinjam['ID_User']?></td>
                             </tr>
                             <tr>
                                 <td class="hijauTua">Email</td>
-                                <td class="hijauMuda">Salsabilafauziah12@gmail.com</td>
+                                <td class="hijauMuda"><?= $pinjam['Email']?></td>
                             </tr>
                         </table>
                     </div>
@@ -50,29 +71,12 @@
                         <table border="1">
                             <tr>
                                 <td class="hijauTua">Dipinjam</td>
-                                <td class="hijauMuda">XX/XX/XXXX</td>
+                                <td class="hijauMuda"><?= $history['Tanggal_Pinjam']?></td>
                             </tr>
                             <tr>
-                                <td class="hijauTua">Status</td>
-                                <td class="hijauMuda">Aktif</td>
+                                <td class="hijauTua">Expired</td>
+                                <td class="hijauMuda"><?= $history['Tanggal_Expired']?></td>
                             </tr>
-                        </table>
-                        <!-- <table border="1">
-                        <tr class="tableBawah" id="hijauTua">
-                            <td>Dipinjam</td>
-                        </tr>
-                        <tr class="tableBawah">
-                            <td>XX/XX/XXXX</td>
-                        </tr>
-                        <tr class="tableBawah" id="hijauTua">
-                            <td>Dikembalikan</td>
-                        </tr>
-                        <tr class="tableBawah">
-                            <td>XX/XX/XXXX</td>
-                        </tr>
-                        <tr class="tableBawah">
-                            <td>Dalam X hari</td>
-                        </tr> -->
                         </table>
                     </div>
                 </div>
@@ -81,9 +85,12 @@
                 <div class="done">
                     <h3>DONE</h3>
                 </div>
-                <!-- <div class="reject"><h3>REJECT</h3></div> -->
             </div>
-        </div>
+        <?php
+        }
+    }
+    ?>
+    </div>
 
         <div class="bawah">
             <?php

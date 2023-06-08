@@ -108,15 +108,18 @@ class Admin extends Controller
         }
     }
 
-    public function cekPeminjam()
+    public function cekPeminjam($id)
     {
         $data['namePage'] = 'Cek Peminjam';
         $data['css'] = 'Admin-pinjamBuku.css';
         $data['header'] = 'Cek Peminjam';
+        $data['page'] = $id;
+        $data['history-data'] = $this->model('book_model')->getHistoryData();
+        $data['history'] = $this->model('book_model')->getAllHistoryJoin();
         $this->view('templates/header',$data);
         $this->view('Admin/templates/header',$data);
         $this->view('Admin/templates/sidebar');
-        $this->view('Admin/pinjam_buku');
+        $this->view('Admin/pinjam_buku',$data);
         $this->view('templates/footer');
     }
 
@@ -147,24 +150,27 @@ class Admin extends Controller
       
         $this->view('templates/footer');
     }
-    public function cariPinjam()
+    public function cariPinjam($id)
     {
         $data['namePage'] = 'Cek Peminjam';
         $data['css'] = 'Admin-pinjamBuku.css';
         $data['header'] = 'Cek Peminjam';
+        $data['query'] = $_POST['query'];
         $this->view('templates/header',$data);
         $this->view('Admin/templates/header',$data);
         $this->view('Admin/templates/sidebar');
-       
 
-        $data['ID_User'] = (int) $_POST['userID'];
-        $data['user']= $this->model('user_model')->getUserId($data['ID_User']);
+        if(isset($data['query']) && $data['query'] != ''){
+            $data['pinjam']= $this->model('book_model')->getHistory($data['query']);
+        }
+        $data['pinjam'] = 0;
         $data['status'] = 1;
-
-        if(isset($data['user'])){
-        $this->view('Admin/pinjam_buku',$data);
+        if($data['pinjam'] > 0){
+        // $this->view('Admin/pinjam_buku',$data);
+        $this->cekPeminjam($id);
         }else{
-            $this->view('Admin/');
+            header('Location: '.BASEURL.'/Admin/cekPinjam/1');
+            exit;
         }
       
         
@@ -205,8 +211,6 @@ class Admin extends Controller
       
         $this->view('templates/footer');
     }
-
-
     public function updateBook($id)
     {
         if(isset($id)){

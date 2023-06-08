@@ -2,7 +2,7 @@
     <div class="search-bar-admin">
 
 
-        <form action="<?= BASEURL ?>/Admin/booklistPage" method="post">
+        <form action="<?= BASEURL ?>/Admin/cariBuku" method="post">
             <input type="text" placeholder="Search ID buku" name="ID_Buku">
             <div class="search-icon">
                 <button type="submit" class="search-button"><i class="fas fa-search"></i></button>

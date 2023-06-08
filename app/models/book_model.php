@@ -44,6 +44,29 @@ class book_model extends Controller{
         return (int)$total;
     }
 
+      /**
+     * tabel history
+    */
+    public function getHistory($query)
+    {
+        $this->db->query("SELECT * FROM history WHERE ID_User LIKE '%$query%' OR ID_Buku LIKE '%$query%'OR ID_History LIKE '%$query%' ");
+        return $this->db->resultSet();
+    }
+    public function getHistoryData()
+    {
+        $this->db->query("SELECT * FROM history");
+        return $this->db->resultSet();
+    }
+    public function getAllHistoryJoin()
+    {
+        $this->db->query("SELECT u.*, b.*
+        FROM history h
+        JOIN user u ON h.ID_User = u.ID_User
+        JOIN buku b ON h.ID_Buku = b.ID_Buku;
+        ");
+        return $this->db->resultSet();
+    }
+
 
 /**
  * 
@@ -129,7 +152,4 @@ class book_model extends Controller{
         $this->db->query("DELETE FROM buku WHERE ID_Buku = '{$data}' ");
         return $this->db->resultSet();
     }
-
-
-    
 }
