@@ -19,7 +19,7 @@
                     <?php
                         $totalRows = count($data['history']);
                         if ($totalRows != 0) {
-                            for ($i = $totalRows-1; $i>0; $i--) {
+                            for ($i = $totalRows-1; $i>=0; $i--) {
                             ?>
                                 <div class="Isi_History">
                                     <img src="../../../public/assets/images/Cover-Buku.png">
