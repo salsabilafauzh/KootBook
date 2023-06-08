@@ -1,8 +1,6 @@
     <div class="mainbar">
-        <form>
-            <input type="image" src="../../../public/assets/images/Kootbook.png">
-        </form>
-        <img src="../../../public/assets/images/Profile.png" alt="Image">
+        <a href="<?= BASEURL ?>/User/"><input type="image" src="../../../public/assets/images/Kootbook.png"></a>
+        <a href="<?= BASEURL ?>/User/historyPage/<?= $_SESSION['User']['ID_User']?>"><img src="../../../public/assets/images/Profile.png" alt="Image"></a>
     </div>
     <div class="Container1">
         <div class="Container1_a">
@@ -33,7 +31,7 @@
             <form action="<?= BASEURL ?>/User/PinjamBuku/<?=$data['book'][0]['ID_Buku']?>" method="post">
                 <div class="Submit">
                     <div class="Submit_Button2">
-                        <a href=""><input type="button" id="Cancel" value="Back"></a>
+                        <a href="<?= BASEURL ?>/User/"><input type="button" id="Cancel" value="Back"></a>
                     </div>
                     <p>Stock Buku : <?=$data['book'][0]['Stock']?></p>
                     <div class="Submit_Button1">

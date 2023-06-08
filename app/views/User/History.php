@@ -16,21 +16,30 @@
             <p>History</p>
             <div class="History">
                 <div class="scrollable">
-                    <div class="Isi_History">
-                        <img src="../../../public/assets/images/Cover-Buku.png">
-                        <table border="2px solid black">
-                            <tr>
-                                <th>Judul Buku</th>
-                                <td colspan="3"><?=$data['history'][0]['Judul']?></td>
-                            </tr>
-                            <tr>
-                                <th>Durasi Pinjam :</th>
-                                <td><?=$data['history'][0]['Tanggal_Pinjam']?></td>
-                                <th>Exp Date :</th>
-                                <td><?=$data['history'][0]['Tanggal_Expired']?></td>
-                            </tr>
-                        </table>
-                    </div>
+                    <?php
+                        $totalRows = count($data['history']);
+                        if ($totalRows != 0) {
+                            for ($i = $totalRows-1; $i>0; $i--) {
+                            ?>
+                                <div class="Isi_History">
+                                    <img src="../../../public/assets/images/Cover-Buku.png">
+                                    <table border="2px solid black">
+                                        <tr>
+                                            <th>Judul Buku</th>
+                                            <td colspan="3"><?=$data['history'][$i]['Judul']?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Durasi Pinjam :</th>
+                                            <td><?=$data['history'][$i]['Tanggal_Pinjam']?></td>
+                                            <th>Exp Date :</th>
+                                            <td><?=$data['history'][$i]['Tanggal_Expired']?></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <?php
+                            }
+                        }
+                    ?>
                 </div>
             </div>
         </div>

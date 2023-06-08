@@ -3,7 +3,7 @@
     <div class="mainbar">
         <a href="<?= BASEURL ?>/User/"><input type="image" src="../assets/images/Kootbook.png"></a>
         <p>List Buku</p>
-        <img src="../../public/assets/images/Profile.png" alt="Image">
+        <a href="historyPage/<?= $_SESSION['User']['ID_User']?>"><img src="../../public/assets/images/Profile.png" alt="Image"></a>
     </div>
     <div class="search_container" >
         <div class="wrap">

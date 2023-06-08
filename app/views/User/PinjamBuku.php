@@ -1,8 +1,6 @@
     <div class="mainbar">
-        <form>
-            <input type="image" src="../../assets/images/Kootbook.png">
-        </form>
-        <img src="../../assets/images/Profile.png" alt="Image">
+        <a href="<?= BASEURL ?>/User/"><input type="image" src="../../assets/images/Kootbook.png"></a>
+        <a href="<?= BASEURL ?>/User/historyPage/<?= $_SESSION['User']['ID_User']?>"><img src="../../assets/images/Profile.png" alt="Image"></a>
     </div>
     <div class="Container1">
         <div class="Container1_a">
@@ -61,9 +59,9 @@
                     </table>
                 </div>
                 <div class="Submit">
-                    <div class="Submit_Button2">
+                    <a href="<?= BASEURL ?>/User/"><div class="Submit_Button2">
                         <input type="button" id="Cancel" value="BATALKAN">
-                    </div>
+                    </div></a>
                     <?php
                     if ($stokStatus == 'Available') {
                         echo "<div class='Submit_Button1'>";
