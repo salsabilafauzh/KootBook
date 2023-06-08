@@ -71,7 +71,11 @@ class User extends Controller{
 
     public function historyPage()
     {
-         $this->view('User/History'); 
+        $data['namePage'] = 'History/Profile';
+        $data['css'] = 'History.css';
+        $this->view('templates/header',$data);
+        $this->view('User/History');
+        $this->view('templates/footer');
     }
 
     /**

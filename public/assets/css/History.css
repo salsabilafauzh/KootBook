@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e4e8e4;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/Background-SignInSignUp.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #cfffcf;
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #9be49a;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4f944e;
+    border-radius: 10px;
+  }
+  
+  .Container1 {
+    display: flex;
+  }
+  
+  .mainbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(142, 195, 176, 0.7);
+    border-bottom: 2px solid #2d2f3f;
+  }
+  
+  .mainbar input[type="image"] {
+    width: 140px;
+    height: 140px;
+    margin-right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  .Container1 {
+    display: flex;
+  }
+  
+  .sidebar_profile {
+    width: 350px;
+    height: 85.8vh;
+    background-color: rgba(202, 255, 235, 0.8);
+    border-radius: 0 0 20px 0;
+    border: 2.5px solid #2d2f3f;
+    border-top: transparent;
+    border-left: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar_profile img {
+    width: 120px;
+    height: 120px;
+    margin-top: 20px;
+  }
+  
+  .SP_Isi {
+    margin-top: 20px;
+    background-color: #ccf6c8;
+    width: 279px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+  }
+  
+  .SP_Isi p {
+    color: #2d2f3f;
+    font-size: 1vw;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: Bold;
+  }
+  
+  .container2 {
+    margin: 0 auto;
+    margin-top: 6px;
+    width: 1000px;
+    height: 84vh;
+    background-color: rgba(202, 255, 235);
+    border-radius: 20px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container2 p {
+    color: #2d2f3f;
+    font-size: 24px;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: Bold;
+  }
+  
+  .History {
+    text-align: center;
+    width: 850px;
+    overflow: auto;
+    max-height: 550px;
+  }
+  
+  .Isi_History {
+    margin-top: 5px;
+    background-color: #ccf6c8;
+    width: 800px;
+    height: 158px;
+    border-radius: 10px;
+    display: flex;
+    border: 4px solid #8EC3B0;
+    align-items: center;
+  }
+  
+  .Isi_History img {
+    width: 120px;
+    height: 140px;
+    margin-left: 10px;
+  }
+  
+  .Isi_History table {
+    margin: 0 auto;
+    vertical-align: top;
+    border-collapse: collapse;
+    height: 79px;
+    width: 640px;
+    border: 2px solid black;
+    align-self: center;
+    text-align: center;
+  }
+  
+  .Isi_History th {
+    font-size: 14px;
+    background-color: #C9DBB2;
+    font-weight: bold;
+  }
+  
+  .Isi_History td {
+    font-size: 14px;
+    background-color: #E3F2C1;
+  }
+  
+  .scrollable {
+    text-align: center;
+    width: auto;
+    overflow: auto;
+  }
