@@ -56,7 +56,7 @@ class book_model extends Controller{
     */
     public function getHistory($query)
     {
-        $query = "SELECT u.*, b.*, h.Tanggal_Pinjam, h.Tanggal_Expired
+        $query = "SELECT u.*, b.*, h.Tanggal_Pinjam, h.Tanggal_Expired, h.Alasan, h.ID_History
         FROM history h
         JOIN user u ON h.ID_User = u.ID_User
         JOIN buku b ON h.ID_Buku = b.ID_Buku 
@@ -65,7 +65,6 @@ class book_model extends Controller{
 
         $this->db->query($query);
         $data['search'] = $this->db->resultSet();
-        // var_dump($data['search']);
         if($data['search'] > 0){
             // $this->getAllHistoryJoin();
             return $data['search'];
@@ -118,7 +117,6 @@ class book_model extends Controller{
     }
     public function updateStock($id_buku,$stock){
         $stock = $stock - 1;
-        // var_dump($stock);
         $this->db->query("UPDATE buku SET Stock = '{$stock}' WHERE ID_Buku = '{$id_buku}'");
         $this->db->execute();
         return $this->db->rowCount();
@@ -127,10 +125,11 @@ class book_model extends Controller{
     public function insertPinjam($id_user,$id_buku,$Stock,$Judul)
     {           $data = $_POST;
                 $id_user = (int) $id_user;
+                $tanggalExpired = $data['Tanggal_Expired'];
                 if ($this->updateStock($id_buku, (int)$Stock) > 0) {
                     $Alasan = $_POST['Alasan'];
                     $tanggalPinjam = date('Y-m-d', strtotime($data['Tanggal_Pinjam']));
-                    $date = date_create_from_format('m-d-Y', '6-14-2023');
+                    $date = date_create_from_format('m-d-Y', $tanggalExpired);
                     $tanggalExpired = date_format($date, 'Y-m-d');
                     $this->db->query("INSERT INTO history (ID_User, ID_Buku, Judul, Tanggal_Pinjam, Tanggal_Expired, Alasan) 
                                       VALUES (:ID_User, :ID_Buku, :Judul, :Tanggal_Pinjam, :Tanggal_Expired, :Alasan)");
@@ -152,7 +151,6 @@ class book_model extends Controller{
     }
     public function updateBook($id){
                 $data = $_POST;
-                // var_dump($_POST);
                 $this->db->query("UPDATE buku SET Judul = :Judul, Penulis = :Penulis, Penerbit = :Penerbit, Tahun_Terbit = :Tahun_Terbit, Sinopsis = :Sinopsis, Stock = :Stock WHERE ID_Buku = :ID_Buku");
 
                 $this->db->bind('Judul', $data['Judul']);

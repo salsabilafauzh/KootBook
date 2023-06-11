@@ -103,7 +103,7 @@ class User extends Controller{
     public function pinjamBukuTrigger($id){
         $data['ID_User'] = $_SESSION['User']['ID_User'];
         $data['book'] = $this->model('book_model')->getBookId($id);
-    
+        $data['Tanggal_Expired']= $_POST['Tanggal_Expired'];
         if (isset($data['book']) && isset($data['ID_User'])) {
             if ($this->model('book_model')->insertPinjam($data['ID_User'], (int)$data['book'][0]['ID_Buku'], $data['book'][0]['Stock'], $data['book'][0]['Judul']) > 0) {
                 echo "<script>alert('Berhasil meminjam!'); setTimeout(function() { window.location.href = '".BASEURL."/User/historyPage/" . $data['ID_User'] . "'; }, 1000);</script>";

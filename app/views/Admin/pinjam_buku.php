@@ -26,8 +26,6 @@
             for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
                 $pinjam = $data['history'][$i];
                 $history = $data['history-data'][$i];
-                var_dump($history);
-                var_dump($pinjam);
         ?>
                 <div class="persegiPanjang">
                     <div class="coverBox">
@@ -68,7 +66,7 @@
                                 </table>
                             </div>
                             <div class="row2">
-                                <textarea name="" id="" cols="15" rows="5" placeholder="Alasan Peminjaman" disabled></textarea>
+                                <textarea name="" id="" cols="15" rows="5" placeholder="Alasan Peminjaman" disabled><?= $history['Alasan'] ?></textarea>
                                 <table border="1">
                                     <tr>
                                         <td class="hijauTua">Dipinjam</td>
@@ -82,12 +80,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="button-container" style="display: flex; flex-direction:column;">
                     <form method="post" action="<?= BASEURL ?>/Admin/donePinjam/<?=$history['ID_History']?>" class="doneReject">
                         <div class="done">
                             <button type="submit">DONE</button>
                         </div>
+                    </form>
+                   <form method="post" action="<?= BASEURL ?>/Admin/hapus/<?=$history['ID_User']?>">
+                        <div class="reject">
+                            <button type="submit">REJECT</button>
+                        </div>
+                    </form>
                     </div>
-                </div>
+            </div>
         <?php
             }
         }

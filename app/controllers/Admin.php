@@ -186,7 +186,6 @@ class Admin extends Controller
             $uploadDir = '../public/assets/images/imgCover/';
 
             // Ambil informasi file
-            $fileName = $_FILES['image']['name'];
             $fileTmp = $_FILES['image']['tmp_name'];
 
             // Generate nama baru dengan perubahan auto increment
@@ -199,7 +198,7 @@ class Admin extends Controller
                 echo "<script>alert('GAGAL MENAMBAHKAN!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/updaetBuku/1'; }, 1000);</script>";
             }
         } else {
-            echo "<script>alert('terjadi kesalahan!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/updateBuku/1'; }, 1000);</script>";
+            echo "<script>alert('terjadi kesalahan atau buat satu data kosong terlebih dahulu!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/updateBuku/1'; }, 1000);</script>";
         }
     }
         if($this->model('book_model')->insertBook($_POST) > 0){

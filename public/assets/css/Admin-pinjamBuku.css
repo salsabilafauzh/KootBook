@@ -206,14 +206,20 @@ textarea {
   cursor: pointer;
 }
 
-.reject {
-  width: 173px;
-  height: 104px;
+.reject button {
+  margin-top: 10px;
+  width: 100px;
+  height: 50px;
   background: #c38e8e;
-  border-radius: 10px 0px 10px 10px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.reject button:hover {
+  background: #956b6b;
+  cursor: pointer;
 }
 
 h3 {

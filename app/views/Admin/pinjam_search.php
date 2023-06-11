@@ -65,7 +65,7 @@
                                 </table>
                             </div>
                             <div class="row2">
-                                <textarea name="" id="" cols="15" rows="5" placeholder="Alasan Peminjaman" disabled></textarea>
+                                <textarea name="" id="" cols="15" rows="5" placeholder="Alasan Peminjaman" disabled><?= $pinjam['Alasan'] ?></textarea>
                                 <table border="1">
                                     <tr>
                                         <td class="hijauTua">Dipinjam</td>
@@ -79,11 +79,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="doneReject">
+                    <form action="<?= BASEURL ?>/Admin/donePinjam/<?=$pinjam['ID_History']?>" method="post"  class="doneReject">
                         <div class="done">
-                            <h3>DONE</h3>
+                            <button type="submit">DONE</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
         <?php
             }
