@@ -307,7 +307,8 @@ header {
   width: 180px;
   height: 225;
   word-wrap: break-word;
-  background-image: url('../images/Cover-Buku.png');
+  /* background-image: url('../images/Cover-Buku.png'); */
+  background-size: cover;
 }
 .item:hover {
   cursor: pointer;

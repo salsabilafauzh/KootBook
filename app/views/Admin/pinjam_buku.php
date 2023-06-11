@@ -26,10 +26,12 @@
             for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
                 $pinjam = $data['history'][$i];
                 $history = $data['history-data'][$i];
+                var_dump($history);
+                var_dump($pinjam);
         ?>
                 <div class="persegiPanjang">
                     <div class="coverBox">
-                        <div class="cover"></div>
+                        <div class="cover" style="background-image: url('../../../public/assets/images/imgCover/<?= $pinjam['ID_Buku'] ?>.jpg');"></div>
                         <div class="stok">
                             <table border="1">
                                 <tr class="baris1">
@@ -80,9 +82,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="doneReject">
+                    <form method="post" action="<?= BASEURL ?>/Admin/donePinjam/<?=$history['ID_History']?>" class="doneReject">
                         <div class="done">
-                            <h3>DONE</h3>
+                            <button type="submit">DONE</button>
                         </div>
                     </div>
                 </div>

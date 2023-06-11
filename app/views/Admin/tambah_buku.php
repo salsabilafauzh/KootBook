@@ -3,7 +3,7 @@
     <form method="post" action="<?= BASEURL ?>/Admin/insertBook" class="container" enctype="multipart/form-data" id="myForm">
       <div class="kiri">
         <div class="cover">
-          <input type="file" name="profile_pic" accept=".jpg, .jpeg, .png" id="">
+        <input type="file" name="image" accept="image/*">
         </div>
 
         <div class="stok">

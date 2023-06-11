@@ -177,7 +177,31 @@ class Admin extends Controller
     
 
     public function insertBook()
-    {
+    {  
+    if (ISSET($_POST)) {
+        $lastId = $this->model('book_model')->getlastId();
+        // Pastikan file telah diunggah dengan benar
+        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+            // Direktori tujuan penyimpanan file
+            $uploadDir = '../public/assets/images/imgCover/';
+
+            // Ambil informasi file
+            $fileName = $_FILES['image']['name'];
+            $fileTmp = $_FILES['image']['tmp_name'];
+
+            // Generate nama baru dengan perubahan auto increment
+            $newFileName = ($lastId +1 ) . ".jpg";
+
+            // Pindahkan file ke direktori tujuan
+            if (move_uploaded_file($fileTmp, $uploadDir . $newFileName)) {
+                echo "<script>alert('File berhasil diunggah dan disimpan dengan nama: ' . $newFileName!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/updateBuku/1'; }, 1000);</script>";
+            } else {
+                echo "<script>alert('GAGAL MENAMBAHKAN!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/updaetBuku/1'; }, 1000);</script>";
+            }
+        } else {
+            echo "<script>alert('terjadi kesalahan!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/updateBuku/1'; }, 1000);</script>";
+        }
+    }
         if($this->model('book_model')->insertBook($_POST) > 0){
             header('Location: '.BASEURL.'/Admin/updateBuku/1');
             exit;
@@ -221,6 +245,14 @@ class Admin extends Controller
         }else{
             //ALERTTTT
             $this->tambahBuku();
+        }
+    }
+    
+    public function donePinjam($id_history) {
+        if($this->model('book_model')->hapusHistoryPinjam($id_history)>0){
+            echo "<script>alert('Berhasil di hapus!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
+        }else{
+            echo "<script>alert('Gagal menghapus'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
         }
     }
 

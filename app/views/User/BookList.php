@@ -30,7 +30,7 @@
     ?>
 
     <form class="cover_buku" action="<?= BASEURL ?>/User/DetailBuku/<?=$item['ID_Buku']?>" method="post">
-        <img src="../../public/assets/images/Cover-Buku.png">
+        <img src="../../public/assets/images/imgCover/<?= $item['ID_Buku']?>.jpg">
         <input type="submit" value="<?= $item['Judul'] ?>">
     </form>
 

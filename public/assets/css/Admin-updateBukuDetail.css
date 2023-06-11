@@ -2,7 +2,7 @@
   overflow: hidden;
 }
 
-.header-image{
+.header-image {
   background-image: url('../images/Admin-homepage-header.png');
 }
 
@@ -66,6 +66,7 @@ body {
   display: flex;
   height: 250px;
   margin-bottom: 30px;
+  background-size: cover;
 }
 
 .cover input {

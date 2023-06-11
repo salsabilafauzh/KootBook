@@ -25,11 +25,10 @@
         if ($totalRows != 0) {
             for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
                 $pinjam = $data['history-data'][$i];
-                // $history = $data['history-data'][$i];
         ?>
                 <div class="persegiPanjang">
                     <div class="coverBox">
-                        <div class="cover"></div>
+                    <div class="cover" style="background-image: url('../../../public/assets/images/imgCover/<?= $pinjam['ID_Buku'] ?>.jpg');"></div>
                         <div class="stok">
                             <table border="1">
                                 <tr class="baris1">

@@ -43,6 +43,13 @@ class book_model extends Controller{
         $total = $result['total'];
         return (int)$total;
     }
+    public function getLastId()
+    {
+        $this->db->query("SELECT MAX(ID_Buku) AS maxId FROM buku");
+        $result = $this->db->single();
+        $total = $result['maxId'];
+        return (int)$total;
+    }
 
       /**
      * tabel history
@@ -167,6 +174,11 @@ class book_model extends Controller{
     public function hapusHistoryTrigger($data)
     {
         $this->db->query("DELETE FROM history WHERE ID_Buku = '{$data}' ");
+        return $this->db->resultSet();
+    }
+    public function hapusHistoryPinjam($data)
+    {
+        $this->db->query("DELETE FROM history WHERE ID_History= '{$data}' ");
         return $this->db->resultSet();
     }
     public function hapusBuku($data)

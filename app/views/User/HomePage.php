@@ -26,16 +26,6 @@
                 </div>
             </header>
         </div>
-        <!-- <form class="search-box">
-
-            <div class="search-icon">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="cancel-icon">
-                <i class="fas fa-times"></i>
-            </div>
-            <input type="text" placeholder="Mau cari buku apa?">
-        </form> -->
         <form class="search-box" action="<?= BASEURL ?>/User/booklistPage" method="post">
         <div class="cancel-icon">
             <i class="fas fa-times"></i>
@@ -48,25 +38,20 @@
 
         <br><br>
         <div class="search-data"></div>
-        <!-- <div class="warta-pustaka">
-            <div class="warta-header">
-
-            </div>
-        </div> -->
        
         
         <div class="rekomendasi">
             <div class="container-side">
                 <button class="scroll-button prev-button">&#10094;</button>
-                <div class="items-container">
+                <div class="items-container" >
                 <?php
                     foreach ($data['book'] as $row) {
-                        echo "<a href='" . BASEURL . "/User/DetailBuku/" . $row['ID_Buku'] . "' class='item'>";
+                        echo "<a href='" . BASEURL . "/User/DetailBuku/" . $row['ID_Buku'] . "' class='item' style='background-image: url(" . "../../public/assets/images/imgCover/" . $row['ID_Buku'] . ".jpg);'>";
                         echo "<div class='desc'>";
                         echo "<p>" . $row['Judul'] . "</p>";
                         echo "</div>";
                         echo "</a>";
-                    }
+                    }                    
                     ?>
 
                 </div>
