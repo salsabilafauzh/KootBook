@@ -114,6 +114,7 @@ class Admin extends Controller
         $data['css'] = 'Admin-pinjamBuku.css';
         $data['header'] = 'Cek Peminjam';
         $data['page'] = $id;
+        $data['status'] = 0;
         $data['history-data'] = $this->model('book_model')->getHistoryData();
         $data['history'] = $this->model('book_model')->getAllHistoryJoin();
         $this->view('templates/header',$data);
@@ -150,32 +151,30 @@ class Admin extends Controller
       
         $this->view('templates/footer');
     }
-    public function cariPinjam($id)
+    public function cariPinjam()
     {
         $data['namePage'] = 'Cek Peminjam';
         $data['css'] = 'Admin-pinjamBuku.css';
         $data['header'] = 'Cek Peminjam';
-        $data['query'] = $_POST['query'];
-        $this->view('templates/header',$data);
-        $this->view('Admin/templates/header',$data);
-        $this->view('Admin/templates/sidebar');
-
-        if(isset($data['query']) && $data['query'] != ''){
-            $data['pinjam']= $this->model('book_model')->getHistory($data['query']);
-        }
-        $data['pinjam'] = 0;
-        $data['status'] = 1;
-        if($data['pinjam'] > 0){
-        // $this->view('Admin/pinjam_buku',$data);
-        $this->cekPeminjam($id);
-        }else{
-            header('Location: '.BASEURL.'/Admin/cekPinjam/1');
-            exit;
-        }
+        $data['status'] = 0;
+        $this->view('templates/header', $data);
+        // $this->view('Admin/templates/header',$data);
+        // $this->view('Admin/templates/sidebar');
       
-        
+        if (isset($_POST['query'])) {
+            $searchQuery = $_POST['query'];
+            $data['history-data'] = $this->model('book_model')->getHistory($searchQuery);
+            if (isset($data['history-data']) && count($data['history-data']) > 0) {
+                $this->view('Admin/pinjam_search', $data);
+            } else {
+                echo "<script>alert('Data Tidak Ditemukan!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
+            }
+        } else {
+            echo "<script>alert('Masukan Query Ulang!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
+        }
         $this->view('templates/footer');
     }
+    
 
     public function insertBook()
     {

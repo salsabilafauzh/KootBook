@@ -6,7 +6,7 @@ class Database {
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $db_name = DB_NAME;
-    private $port = 3306;
+    private $port = 3307;
     
     private $dbh;
     private $stmt;

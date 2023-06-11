@@ -49,8 +49,22 @@ class book_model extends Controller{
     */
     public function getHistory($query)
     {
-        $this->db->query("SELECT * FROM history WHERE ID_User LIKE '%$query%' OR ID_Buku LIKE '%$query%'OR ID_History LIKE '%$query%' ");
-        return $this->db->resultSet();
+        $query = "SELECT u.*, b.*, h.Tanggal_Pinjam, h.Tanggal_Expired
+        FROM history h
+        JOIN user u ON h.ID_User = u.ID_User
+        JOIN buku b ON h.ID_Buku = b.ID_Buku 
+        WHERE u.Username LIKE '%$query%' OR b.Judul LIKE '%$query%' OR h.Tanggal_Expired LIKE '%$query%'
+        OR u.ID_User LIKE '%$query%' OR b.Id_Buku LIKE '%$query%' OR u.Email LIKE '%$query%' OR h.Tanggal_Pinjam LIKE '%$query%'";
+
+        $this->db->query($query);
+        $data['search'] = $this->db->resultSet();
+        // var_dump($data['search']);
+        if($data['search'] > 0){
+            // $this->getAllHistoryJoin();
+            return $data['search'];
+        }else{
+            return 0;
+        }
     }
     public function getHistoryData()
     {
@@ -105,14 +119,12 @@ class book_model extends Controller{
  
     public function insertPinjam($id_user,$id_buku,$Stock,$Judul)
     {           $data = $_POST;
-             
                 $id_user = (int) $id_user;
-                // var_dump($id_user);
                 if ($this->updateStock($id_buku, (int)$Stock) > 0) {
                     $Alasan = $_POST['Alasan'];
                     $tanggalPinjam = date('Y-m-d', strtotime($data['Tanggal_Pinjam']));
-                    $tanggalExpired = date('Y-m-d', strtotime($data['Tanggal_Expired']));
-                
+                    $date = date_create_from_format('m-d-Y', '6-14-2023');
+                    $tanggalExpired = date_format($date, 'Y-m-d');
                     $this->db->query("INSERT INTO history (ID_User, ID_Buku, Judul, Tanggal_Pinjam, Tanggal_Expired, Alasan) 
                                       VALUES (:ID_User, :ID_Buku, :Judul, :Tanggal_Pinjam, :Tanggal_Expired, :Alasan)");
                     $this->db->bind(':ID_User', (int)$id_user);
@@ -152,8 +164,14 @@ class book_model extends Controller{
  * 
  * DELETE FUNCTION
  */
+    public function hapusHistoryTrigger($data)
+    {
+        $this->db->query("DELETE FROM history WHERE ID_Buku = '{$data}' ");
+        return $this->db->resultSet();
+    }
     public function hapusBuku($data)
     {
+        if($this->hapusHistoryTrigger($data)>0)
         $this->db->query("DELETE FROM buku WHERE ID_Buku = '{$data}' ");
         return $this->db->resultSet();
     }

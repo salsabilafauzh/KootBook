@@ -10,7 +10,7 @@
 
     <div class="container-data">
         <?php
-        $totalRows = count($data['history']);
+        $totalRows = count($data['history-data']);
         $limit = 2;
         if (isset($data['page'])) {
             $currentPage = (int) $data['page'];
@@ -24,8 +24,8 @@
 
         if ($totalRows != 0) {
             for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
-                $pinjam = $data['history'][$i];
-                $history = $data['history-data'][$i];
+                $pinjam = $data['history-data'][$i];
+                // $history = $data['history-data'][$i];
         ?>
                 <div class="persegiPanjang">
                     <div class="coverBox">
@@ -70,11 +70,11 @@
                                 <table border="1">
                                     <tr>
                                         <td class="hijauTua">Dipinjam</td>
-                                        <td class="hijauMuda"><?= $history['Tanggal_Pinjam'] ?></td>
+                                        <td class="hijauMuda"><?= $pinjam['Tanggal_Pinjam'] ?></td>
                                     </tr>
                                     <tr>
                                         <td class="hijauTua">Expired</td>
-                                        <td class="hijauMuda"><?= $history['Tanggal_Expired'] ?></td>
+                                        <td class="hijauMuda"><?= $pinjam['Tanggal_Expired'] ?></td>
                                     </tr>
                                 </table>
                             </div>

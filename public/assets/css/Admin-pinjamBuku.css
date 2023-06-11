@@ -59,7 +59,6 @@ body {
   cursor: pointer;
 }
 
-
 .container-data {
   width: 100%;
   display: flex;
@@ -227,8 +226,9 @@ h3 {
   align-items: center;
   justify-content: center;
   width: 931px;
-  bottom: 0;
-  position: fixed;
+  height: auto;
+  /* bottom: 0;
+  position: fixed; */
 }
 
 .bulet {
@@ -238,11 +238,13 @@ h3 {
   border-radius: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 20px 50px;
+  justify-content: space-around;
+
   background-color: aquamarine;
 }
-
+.halaman {
+  margin: 20px;
+}
 .bulet:hover {
   background-color: rgb(9, 161, 111);
 }
