@@ -1,7 +1,7 @@
     <div class="mainbar">
-        <img src='../../public/assets/images/Kootbook.png' id="img-about-mainbar">
+        <a href="<?= BASEURL ?>/User/"><img src='../../public/assets/images/Kootbook.png' id="img-about-mainbar"></a>
         <p>About KootBook</p>
-        <img src='../../public/assets/images/Profile.png' alt="Image" id="img-about-mainbar">
+        <a href="historyPage/<?= $_SESSION['User']['ID_User']?>"><img src='../../public/assets/images/Profile.png' alt="Image" id="profile"></a>
     </div>
     <div class="About_Container">
         <div class="AContent">
