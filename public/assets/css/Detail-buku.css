@@ -53,6 +53,7 @@ body {
   height: 210px;
   margin-top: 10px;
   margin-left: 120px;
+  background-size: cover;
 }
 
 .Detail_Buku1 {
@@ -81,7 +82,7 @@ body {
 
 .DB1_Isi p {
   color: #2d2f3f;
-  font-size: 1vw; 
+  font-size: 1vw;
   text-align: center;
   font-weight: bold;
 }

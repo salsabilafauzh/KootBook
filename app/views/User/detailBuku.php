@@ -4,8 +4,8 @@
     </div>
     <div class="Container1">
         <div class="Container1_a">
-            <div class="Cover_Buku">
-                <img src="../../../public/assets/images/Cover-Buku.png" alt="Cover Buku">
+            <div class="Cover_Buku" >
+                <img src="../../../public/assets/images/imgCover/<?= $data['book'][0]['ID_Buku'] ?>.jpg" alt="Cover Buku">
             </div>
             <div class="Detail_Buku1">
                 <div class="DB1_Isi">

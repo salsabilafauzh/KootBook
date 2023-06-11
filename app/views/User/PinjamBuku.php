@@ -5,7 +5,7 @@
     <div class="Container1">
         <div class="Container1_a">
             <div class="Cover_Buku">
-                <img src="../../assets/images/Cover-Buku.png" alt="Cover Buku">
+                <img src="../../../public/assets/images/imgCover/<?= $data['book'][0]['ID_Buku'] ?>.jpg" alt="Cover Buku">
             </div>
             <?php
             if($data['book'][0]['Stock']>0){
