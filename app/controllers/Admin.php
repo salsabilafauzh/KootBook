@@ -158,8 +158,8 @@ class Admin extends Controller
         $data['header'] = 'Cek Peminjam';
         $data['status'] = 0;
         $this->view('templates/header', $data);
-        // $this->view('Admin/templates/header',$data);
-        // $this->view('Admin/templates/sidebar');
+        $this->view('Admin/templates/header',$data);
+        $this->view('Admin/templates/sidebar');
       
         if (isset($_POST['query'])) {
             $searchQuery = $_POST['query'];
