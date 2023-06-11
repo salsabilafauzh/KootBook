@@ -46,6 +46,11 @@ class user_model extends Controller{
         }
     }
 
+    public function hapusUserHistory($id) {
+        $this->db->query('DELETE FROM history WHERE ID_User = :ID_User');
+        $this->db->bind('ID_User', $id);
+        return $this->db->resultSet();
+    }
     
     public function hapusUser($data)
     {

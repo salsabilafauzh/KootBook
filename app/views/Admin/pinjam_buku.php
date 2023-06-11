@@ -80,17 +80,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="button-container" style="display: flex; flex-direction:column;">
-                    <form method="post" action="<?= BASEURL ?>/Admin/donePinjam/<?=$history['ID_History']?>" class="doneReject">
-                        <div class="done">
-                            <button type="submit">DONE</button>
-                        </div>
-                    </form>
-                   <form method="post" action="<?= BASEURL ?>/Admin/hapus/<?=$history['ID_User']?>">
-                        <div class="reject">
-                            <button type="submit">REJECT</button>
-                        </div>
-                    </form>
+                    <div class="button-container" style="display:flex; flex-direction:column;">
+                        <form method="post" action="<?= BASEURL ?>/Admin/donePinjam/<?=$history['ID_History']?>" class="doneReject">
+                                <div class="done">
+                                    <button type="submit">DONE</button>
+                                </div>
+                        </form>
+                    <form method="post" action="<?= BASEURL ?>/Admin/hapusPeminjam/<?=$history['ID_User']?>">
+                                <div class="reject">
+                                    <button type="submit">REJECT</button>
+                                </div>
+                        </form>
                     </div>
             </div>
         <?php

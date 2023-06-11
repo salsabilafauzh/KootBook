@@ -22,7 +22,7 @@
                             for ($i = $totalRows-1; $i>=0; $i--) {
                             ?>
                                 <div class="Isi_History">
-                                    <img src="../../../public/assets/images/imgCover/<?= $data['history'][0]['ID_Buku'] ?>.jpg">
+                                    <img src="../../../public/assets/images/imgCover/<?= $data['history'][$i]['ID_Buku'] ?>.jpg">
                                     <table border="2px solid black">
                                         <tr>
                                             <th>Judul Buku</th>

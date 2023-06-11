@@ -254,6 +254,15 @@ class Admin extends Controller
             echo "<script>alert('Gagal menghapus'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
         }
     }
+    public function hapusPeminjam($id_user){
+        if(isset($id_user)){
+            $this->model('user_model')->hapusUserHistory($id_user);
+            $this->model('user_model')->hapusUser($id_user);
+            echo "<script>alert('Berhasil di hapus!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
+        }else{
+            echo "<script>alert('Gagal menghapus'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
+        }
+    }
 
     public static function logout() {
         unset($_SESSION['Email']);
