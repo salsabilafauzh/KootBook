@@ -29,9 +29,9 @@
                                             <td colspan="3"><?=$data['history'][$i]['Judul']?></td>
                                         </tr>
                                         <tr>
-                                            <th>Durasi Pinjam :</th>
+                                            <th>Tggl Dipinjam :</th>
                                             <td><?=$data['history'][$i]['Tanggal_Pinjam']?></td>
-                                            <th>Exp Date :</th>
+                                            <th>Tggl Dikembalikan :</th>
                                             <td><?=$data['history'][$i]['Tanggal_Expired']?></td>
                                         </tr>
                                     </table>
