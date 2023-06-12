@@ -126,11 +126,13 @@ class book_model extends Controller{
     {           $data = $_POST;
                 $id_user = (int) $id_user;
                 $tanggalExpired = $data['Tanggal_Expired'];
+                $tanggalPinjam = $data['Tanggal_Pinjam'];
                 if ($this->updateStock($id_buku, (int)$Stock) > 0) {
                     $Alasan = $_POST['Alasan'];
-                    $tanggalPinjam = date('Y-m-d', strtotime($data['Tanggal_Pinjam']));
+                    $date_pinjam = date_create_from_format('m-d-Y', $tanggalPinjam);
                     $date = date_create_from_format('m-d-Y', $tanggalExpired);
                     $tanggalExpired = date_format($date, 'Y-m-d');
+                    $tanggalPinjam = date_format($date_pinjam, 'Y-m-d');
                     $this->db->query("INSERT INTO history (ID_User, ID_Buku, Judul, Tanggal_Pinjam, Tanggal_Expired, Alasan) 
                                       VALUES (:ID_User, :ID_Buku, :Judul, :Tanggal_Pinjam, :Tanggal_Expired, :Alasan)");
                     $this->db->bind(':ID_User', (int)$id_user);

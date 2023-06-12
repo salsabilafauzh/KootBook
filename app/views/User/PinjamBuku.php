@@ -74,25 +74,27 @@
         </div>
     </div>
     <script>
-        var currentDate = new Date();
-        var formattedDate = currentDate.toLocaleDateString().split('/').join('-');
+       var currentDate = new Date();
+        var month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+        var date = ("0" + currentDate.getDate()).slice(-2);
+        var year = currentDate.getFullYear();
+        var formattedDate = month + "-" + date + "-" + year;
         document.getElementById('currentDate').value = formattedDate;
-        function calculateDate(selectedDays) {
-            var currentDate = new Date();
-            var returnDate = new Date(currentDate.getTime() + selectedDays * 24 * 60 * 60 * 1000);
-            return returnDate;
-        }
 
-        function updateReturnDate(selectedDays) {
-            var calculatedDate = calculateDate(selectedDays);
+        function calculateDate(selectedDays) {
+    var currentDate = new Date();
+    var returnDate = new Date(currentDate.getTime() + selectedDays * 24 * 60 * 60 * 1000);
+    return returnDate;
+}
+
+function updateReturnDate(selectedDays) {
+    var calculatedDate = calculateDate(selectedDays);
             document.getElementById('returnDate').value = calculatedDate.toLocaleDateString().split('/').join('-');
             var buttons = document.querySelectorAll('.Select_Hari button');
                 buttons.forEach(function(button) {
                     button.classList.remove('clicked');
                 });
                 event.target.classList.add('clicked');
-        }
-
-
+}
 
 </script>

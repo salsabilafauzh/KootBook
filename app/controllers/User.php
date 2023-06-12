@@ -111,7 +111,6 @@ class User extends Controller{
                 echo "<script>alert('Error!'); setTimeout(function() { window.location.href = '".BASEURL."/User/historyPage/" . $data['ID_User'] . "'; }, 1000);</script>";
             }
         }
-        
     }
     public static function logout() {
         unset($_SESSION['Email']);
