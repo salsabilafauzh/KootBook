@@ -25,10 +25,12 @@
         if ($totalRows != 0) {
             for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
                 $pinjam = $data['history-data'][$i];
-        ?>
+                ?>
                 <div class="persegiPanjang">
                     <div class="coverBox">
-                    <div class="cover" style="background-image: url('../../../public/assets/images/imgCover/<?= $pinjam['ID_Buku'] ?>.jpg');"></div>
+                    <div class="cover">
+                            <img src='../../../public/assets/images/imgCover/<?= $pinjam['ID_Buku'] ?>.jpg'>
+                    </div>
                         <div class="stok">
                             <table border="1">
                                 <tr class="baris1">
@@ -80,12 +82,12 @@
                         </div>
                     </div>
                     <div class="button-container" style="display: flex; flex-direction:column;">
-                    <form method="post" action="<?= BASEURL ?>/Admin/donePinjam/<?=$history['ID_History']?>" class="doneReject">
+                    <form method="post" action="<?= BASEURL ?>/Admin/donePinjam/<?=$pinjam['ID_History']?>" class="doneReject">
                                 <div class="done">
                                     <button type="submit">DONE</button>
                                 </div>
                         </form>
-                    <form method="post" action="<?= BASEURL ?>/Admin/hapusPeminjam/<?=$history['ID_User']?>">
+                    <form method="post" action="<?= BASEURL ?>/Admin/hapusPeminjam/<?=$pinjam['ID_User']?>">
                                 <div class="reject">
                                     <button type="submit">REJECT</button>
                                 </div>
@@ -100,19 +102,15 @@
 
     <div class="bawah">
         <?php
-        if($data['status'] == 0){
         if ($currentPage > 1) {
-            echo "<a href='" . BASEURL . "/Admin/cariPinjam/" . ($currentPage - 1) . "'><div class='bulet'><</div></a>";
+            echo "<a href='" . BASEURL . "/Admin/cariPinjam_pagination/" . ($currentPage - 1) . "'><div class='bulet'><</div></a>";
         }
 
         echo "<div class='halaman'>" . $currentPage . "</div>";
 
         // Next page link
         if ($currentPage < $totalPages) {
-            echo "<a href='" . BASEURL . "/Admin/cariPinjam/" . ($currentPage + 1) . "'><div class='bulet'>></div></a>";
-        }
+            echo "<a href='" . BASEURL . "/Admin/cariPinjam_pagination/" . ($currentPage + 1) . "'><div class='bulet'>></div></a>";
         }
         ?>
-    
-       
     </div>

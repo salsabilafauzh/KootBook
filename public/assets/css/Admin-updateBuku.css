@@ -201,3 +201,8 @@ button:hover {
 a {
   text-decoration: none;
 }
+
+.cover img{
+  width: 130px;
+  height: 158px;
+}

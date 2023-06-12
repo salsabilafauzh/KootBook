@@ -11,7 +11,7 @@
         <a href="<?= BASEURL ?>/Admin/listUser/1"><button>List User</button></a>
         </li>
         <li>
-        <a href="<?= BASEURL ?>/Admin/updateBuku/1"><button>Update Buku</button></a>
+        <a href="<?= BASEURL ?>/Admin/updateBuku/1"><button>List Buku</button></a>
         </li>
         <li>
         <a href="<?= BASEURL ?>/Admin/cekPeminjam/1"><button>Cek Peminjam</button></a>

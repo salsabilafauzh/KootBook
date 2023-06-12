@@ -32,7 +32,9 @@
                         <p>ID Buku <?= $book['ID_Buku'] ?></p>
                     </div>
                     <div class="cover-base">
-                    <div class="cover" style="background-image: url('../../../public/assets/images/imgCover/<?= $book['ID_Buku'] ?>.jpg');"></div>
+                    <div class="cover">
+                        <img src='../../../public/assets/images/imgCover/<?= $book['ID_Buku'] ?>.jpg'>
+                    </div>
                         <div class="stok">Stok: <?= $book['Stock'] ?></div>
                     </div>
                     <div class="tabel">

@@ -90,7 +90,6 @@ class Admin extends Controller
         $data['namePage'] = 'Update Buku';
         $data['css'] = 'Admin-updateBukuDetail.css';
         $data['header'] = 'Update Buku';
-        
         $this->view('templates/header',$data);
         $this->view('Admin/templates/header',$data);
         $this->view('Admin/templates/sidebar');
@@ -114,13 +113,20 @@ class Admin extends Controller
         $data['css'] = 'Admin-pinjamBuku.css';
         $data['header'] = 'Cek Peminjam';
         $data['page'] = $id;
-        $data['status'] = 0;
         $data['history-data'] = $this->model('book_model')->getHistoryData();
         $data['history'] = $this->model('book_model')->getAllHistoryJoin();
         $this->view('templates/header',$data);
         $this->view('Admin/templates/header',$data);
         $this->view('Admin/templates/sidebar');
         $this->view('Admin/pinjam_buku',$data);
+        $this->view('templates/footer');
+        $data['status'] = 0;
+        
+        if($data['history-data'] && $data['history']){
+            $this->view('Admin/pinjam_buku',$data);
+        }else{
+            $this->view('Admin/pinjam_buku',$data);
+        }
         $this->view('templates/footer');
     }
 
@@ -167,10 +173,33 @@ class Admin extends Controller
             if (isset($data['history-data']) && count($data['history-data']) > 0) {
                 $this->view('Admin/pinjam_search', $data);
             } else {
-                echo "<script>alert('Data Tidak Ditemukan!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
+                echo "<script>alert('Data Tidak Ditemukan!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; });</script>";
             }
         } else {
-            echo "<script>alert('Masukan Query Ulang!'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
+            echo "setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam'; }, 1000);</script>";
+        }
+        $this->view('templates/footer');
+    }
+
+    public function cariPinjam_pagination($id)
+    {
+        $data['namePage'] = 'Cek Peminjam';
+        $data['css'] = 'Admin-pinjamBuku.css';
+        $data['header'] = 'Cek Peminjam';
+        $data['page'] = $id;
+        $data['history-data'] = $this->model('book_model')->getHistoryData();
+        $data['history'] = $this->model('book_model')->getAllHistoryJoin();
+        $this->view('templates/header',$data);
+        $this->view('Admin/templates/header',$data);
+        $this->view('Admin/templates/sidebar');
+        $this->view('Admin/pinjam_buku',$data);
+        $this->view('templates/footer');
+        $data['status'] = 0;
+        
+        if($data['history-data'] && $data['history']){
+            $this->view('Admin/pinjam_buku',$data);
+        }else{
+            $this->view('Admin/pinjam_buku',$data);
         }
         $this->view('templates/footer');
     }
@@ -254,6 +283,7 @@ class Admin extends Controller
             echo "<script>alert('Gagal menghapus'); setTimeout(function() { window.location.href = '" . BASEURL . "/Admin/cekPeminjam/1'; }, 1000);</script>";
         }
     }
+
     public function hapusPeminjam($id_user){
         if(isset($id_user)){
             $this->model('user_model')->hapusUserHistory($id_user);

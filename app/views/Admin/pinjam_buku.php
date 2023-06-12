@@ -26,10 +26,12 @@
             for ($i = $startIndex; $i <= $endIndex && $i < $totalRows; $i++) {
                 $pinjam = $data['history'][$i];
                 $history = $data['history-data'][$i];
-        ?>
+                ?>
                 <div class="persegiPanjang">
                     <div class="coverBox">
-                        <div class="cover" style="background-image: url('../../../public/assets/images/imgCover/<?= $pinjam['ID_Buku'] ?>.jpg');"></div>
+                        <div class="cover">
+                            <img src='../../../public/assets/images/imgCover/<?= $pinjam['ID_Buku'] ?>.jpg'>
+                        </div>
                         <div class="stok">
                             <table border="1">
                                 <tr class="baris1">
@@ -101,7 +103,7 @@
 
     <div class="bawah">
         <?php
-        if($data['status'] == 0){
+
         if ($currentPage > 1) {
             echo "<a href='" . BASEURL . "/Admin/cekPeminjam/" . ($currentPage - 1) . "'><div class='bulet'><</div></a>";
         }
@@ -112,8 +114,6 @@
         if ($currentPage < $totalPages) {
             echo "<a href='" . BASEURL . "/Admin/cekPeminjam/" . ($currentPage + 1) . "'><div class='bulet'>></div></a>";
         }
-        }
+        
         ?>
-    
-       
     </div>
